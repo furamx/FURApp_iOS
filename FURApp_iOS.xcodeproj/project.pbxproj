@@ -16,6 +16,8 @@
 		87F2E0911FB21D79001CFA93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F2E08F1FB21D79001CFA93 /* LaunchScreen.storyboard */; };
 		87F2E09C1FB21D79001CFA93 /* FURApp_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2E09B1FB21D79001CFA93 /* FURApp_iOSTests.swift */; };
 		87F2E0A71FB21D79001CFA93 /* FURApp_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2E0A61FB21D79001CFA93 /* FURApp_iOSUITests.swift */; };
+		87F2E0BA1FB220A0001CFA93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87F2E0B91FB220A0001CFA93 /* GoogleService-Info.plist */; };
+		87F2E0BC1FB22374001CFA93 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2E0BB1FB22374001CFA93 /* SignInViewController.swift */; };
 		BF53C15FA22C46D835D6DC79 /* Pods_FURApp_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7427CDAC80A4B690BAD78091 /* Pods_FURApp_iOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		87F2E0A21FB21D79001CFA93 /* FURApp_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FURApp_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F2E0A61FB21D79001CFA93 /* FURApp_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FURApp_iOSUITests.swift; sourceTree = "<group>"; };
 		87F2E0A81FB21D79001CFA93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87F2E0B91FB220A0001CFA93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		87F2E0BB1FB22374001CFA93 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		90EC480B7558757FF75400D3 /* Pods-FURApp_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FURApp_iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FURApp_iOSTests/Pods-FURApp_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D19BF6321FB2852B7137076B /* Pods-FURApp_iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FURApp_iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FURApp_iOSUITests/Pods-FURApp_iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4AF32834D21A9241BD3DD98 /* Pods-FURApp_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FURApp_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FURApp_iOS/Pods-FURApp_iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				87F2E08D1FB21D79001CFA93 /* Assets.xcassets */,
 				87F2E08F1FB21D79001CFA93 /* LaunchScreen.storyboard */,
 				87F2E0921FB21D79001CFA93 /* Info.plist */,
+				87F2E0B91FB220A0001CFA93 /* GoogleService-Info.plist */,
 			);
 			path = FURApp_iOS;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				87F2E0881FB21D79001CFA93 /* MainViewController.swift */,
+				87F2E0BB1FB22374001CFA93 /* SignInViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87F2E0911FB21D79001CFA93 /* LaunchScreen.storyboard in Resources */,
+				87F2E0BA1FB220A0001CFA93 /* GoogleService-Info.plist in Resources */,
 				87F2E08E1FB21D79001CFA93 /* Assets.xcassets in Resources */,
 				87F2E08C1FB21D79001CFA93 /* Main.storyboard in Resources */,
 			);
@@ -455,8 +462,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FURApp_iOS/Pods-FURApp_iOS-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -506,6 +513,7 @@
 			files = (
 				87F2E0891FB21D79001CFA93 /* MainViewController.swift in Sources */,
 				87F2E0871FB21D79001CFA93 /* AppDelegate.swift in Sources */,
+				87F2E0BC1FB22374001CFA93 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
