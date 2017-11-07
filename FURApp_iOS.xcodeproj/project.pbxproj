@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		87F2E0871FB21D79001CFA93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2E0861FB21D79001CFA93 /* AppDelegate.swift */; };
-		87F2E0891FB21D79001CFA93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2E0881FB21D79001CFA93 /* ViewController.swift */; };
+		87F2E0891FB21D79001CFA93 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2E0881FB21D79001CFA93 /* MainViewController.swift */; };
 		87F2E08C1FB21D79001CFA93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F2E08A1FB21D79001CFA93 /* Main.storyboard */; };
 		87F2E08E1FB21D79001CFA93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87F2E08D1FB21D79001CFA93 /* Assets.xcassets */; };
 		87F2E0911FB21D79001CFA93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F2E08F1FB21D79001CFA93 /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		87F2E0831FB21D79001CFA93 /* FURApp_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FURApp_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F2E0861FB21D79001CFA93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		87F2E0881FB21D79001CFA93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		87F2E0881FB21D79001CFA93 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		87F2E08B1FB21D79001CFA93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87F2E08D1FB21D79001CFA93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87F2E0901FB21D79001CFA93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,8 +97,11 @@
 		87F2E0851FB21D79001CFA93 /* FURApp_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				87F2E0B81FB21F42001CFA93 /* Domain */,
+				87F2E0B71FB21F3E001CFA93 /* Model */,
+				87F2E0B61FB21F39001CFA93 /* Presenter */,
+				87F2E0B51FB21F31001CFA93 /* View */,
 				87F2E0861FB21D79001CFA93 /* AppDelegate.swift */,
-				87F2E0881FB21D79001CFA93 /* ViewController.swift */,
 				87F2E08A1FB21D79001CFA93 /* Main.storyboard */,
 				87F2E08D1FB21D79001CFA93 /* Assets.xcassets */,
 				87F2E08F1FB21D79001CFA93 /* LaunchScreen.storyboard */,
@@ -123,6 +126,35 @@
 				87F2E0A81FB21D79001CFA93 /* Info.plist */,
 			);
 			path = FURApp_iOSUITests;
+			sourceTree = "<group>";
+		};
+		87F2E0B51FB21F31001CFA93 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87F2E0881FB21D79001CFA93 /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87F2E0B61FB21F39001CFA93 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		87F2E0B71FB21F3E001CFA93 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		87F2E0B81FB21F42001CFA93 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87F2E0891FB21D79001CFA93 /* ViewController.swift in Sources */,
+				87F2E0891FB21D79001CFA93 /* MainViewController.swift in Sources */,
 				87F2E0871FB21D79001CFA93 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
