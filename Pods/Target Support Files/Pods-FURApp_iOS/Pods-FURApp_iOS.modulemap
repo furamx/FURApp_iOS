@@ -1,0 +1,6 @@
+framework module Pods_FURApp_iOS {
+  umbrella header "Pods-FURApp_iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
