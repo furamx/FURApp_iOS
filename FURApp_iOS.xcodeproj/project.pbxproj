@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2307C7916BD58B4F0E69EDA2 /* Pods_FURApp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E5E6099F859DB84F31A68B /* Pods_FURApp_iOS.framework */; };
 		801F38C99DE65194D181B5DF /* Pods_FURApp_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F951A46CDCDDD99A4C1B1A8 /* Pods_FURApp_iOSUITests.framework */; };
+		87889E021FB4C7F10049561E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87889E011FB4C7F10049561E /* AuthViewController.swift */; };
 		87F2E0871FB21D79001CFA93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2E0861FB21D79001CFA93 /* AppDelegate.swift */; };
 		87F2E0891FB21D79001CFA93 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2E0881FB21D79001CFA93 /* MainViewController.swift */; };
 		87F2E08C1FB21D79001CFA93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F2E08A1FB21D79001CFA93 /* Main.storyboard */; };
@@ -17,7 +18,6 @@
 		87F2E09C1FB21D79001CFA93 /* FURApp_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2E09B1FB21D79001CFA93 /* FURApp_iOSTests.swift */; };
 		87F2E0A71FB21D79001CFA93 /* FURApp_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2E0A61FB21D79001CFA93 /* FURApp_iOSUITests.swift */; };
 		87F2E0BA1FB220A0001CFA93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87F2E0B91FB220A0001CFA93 /* GoogleService-Info.plist */; };
-		87F2E0BC1FB22374001CFA93 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2E0BB1FB22374001CFA93 /* SignInViewController.swift */; };
 		BF53C15FA22C46D835D6DC79 /* Pods_FURApp_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7427CDAC80A4B690BAD78091 /* Pods_FURApp_iOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +45,7 @@
 		600A9160C65BCB0F9930F53C /* Pods-FURApp_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FURApp_iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FURApp_iOSTests/Pods-FURApp_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		7427CDAC80A4B690BAD78091 /* Pods_FURApp_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FURApp_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F951A46CDCDDD99A4C1B1A8 /* Pods_FURApp_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FURApp_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87889E011FB4C7F10049561E /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		87F2E0831FB21D79001CFA93 /* FURApp_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FURApp_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F2E0861FB21D79001CFA93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87F2E0881FB21D79001CFA93 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		87F2E0A61FB21D79001CFA93 /* FURApp_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FURApp_iOSUITests.swift; sourceTree = "<group>"; };
 		87F2E0A81FB21D79001CFA93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87F2E0B91FB220A0001CFA93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		87F2E0BB1FB22374001CFA93 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		90EC480B7558757FF75400D3 /* Pods-FURApp_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FURApp_iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FURApp_iOSTests/Pods-FURApp_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D19BF6321FB2852B7137076B /* Pods-FURApp_iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FURApp_iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FURApp_iOSUITests/Pods-FURApp_iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4AF32834D21A9241BD3DD98 /* Pods-FURApp_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FURApp_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FURApp_iOS/Pods-FURApp_iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				87F2E0881FB21D79001CFA93 /* MainViewController.swift */,
-				87F2E0BB1FB22374001CFA93 /* SignInViewController.swift */,
+				87889E011FB4C7F10049561E /* AuthViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -512,8 +512,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				87F2E0891FB21D79001CFA93 /* MainViewController.swift in Sources */,
+				87889E021FB4C7F10049561E /* AuthViewController.swift in Sources */,
 				87F2E0871FB21D79001CFA93 /* AppDelegate.swift in Sources */,
-				87F2E0BC1FB22374001CFA93 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

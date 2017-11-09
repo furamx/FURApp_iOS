@@ -7,19 +7,42 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuthUI
+import FirebaseFacebookAuthUI
+
 
 class MainViewController: UIViewController {
+    
+    fileprivate(set) var authUI: FUIAuth?
 
     override func viewDidLoad() {
+        // This is for the login button to appear everytime the app is launched.
+        // Delete this further in the development
+        do{
+            try Auth.auth().signOut()
+            print("User signed out")
+        }catch {
+            print("There is no user")
+        }
+        // end of comment
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.authUI = FUIAuth.defaultAuthUI()
+        self.authUI?.delegate = (AuthViewController() as FUIAuthDelegate)
+        self.authUI?.providers = [FUIFacebookAuth()]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    // MARK: Button Actions
+    @IBAction func openLoginAction(_ sender: UIButton) {
+        let authViewController = authUI?.authViewController()
+        self.present(authViewController!, animated: true, completion: nil)
+    }
 }
 
