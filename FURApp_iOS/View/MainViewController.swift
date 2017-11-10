@@ -41,6 +41,8 @@ class MainViewController: UIViewController {
     
     // MARK: Button Actions
     @IBAction func openLoginAction(_ sender: UIButton) {
+        // TODO: Hacer un fork en el repositorio de firebase para cambiar NSBundle.mainBundle a Bundle.main
+        authUI?.customStringsBundle = Bundle.main
         let authViewController = authUI?.authViewController()
         self.present(authViewController!, animated: true, completion: nil)
     }

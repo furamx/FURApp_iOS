@@ -10,6 +10,8 @@
 		2307C7916BD58B4F0E69EDA2 /* Pods_FURApp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E5E6099F859DB84F31A68B /* Pods_FURApp_iOS.framework */; };
 		801F38C99DE65194D181B5DF /* Pods_FURApp_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F951A46CDCDDD99A4C1B1A8 /* Pods_FURApp_iOSUITests.framework */; };
 		87889E021FB4C7F10049561E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87889E011FB4C7F10049561E /* AuthViewController.swift */; };
+		87889E041FB4D5EE0049561E /* FirebaseAuthUI.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87889E031FB4D5ED0049561E /* FirebaseAuthUI.strings */; };
+		87EA06BC1FB60DB3005EF130 /* FirebaseFacebookAuthUI.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87EA06BB1FB60DB3005EF130 /* FirebaseFacebookAuthUI.strings */; };
 		87F2E0871FB21D79001CFA93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2E0861FB21D79001CFA93 /* AppDelegate.swift */; };
 		87F2E0891FB21D79001CFA93 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2E0881FB21D79001CFA93 /* MainViewController.swift */; };
 		87F2E08C1FB21D79001CFA93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F2E08A1FB21D79001CFA93 /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 		7427CDAC80A4B690BAD78091 /* Pods_FURApp_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FURApp_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F951A46CDCDDD99A4C1B1A8 /* Pods_FURApp_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FURApp_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87889E011FB4C7F10049561E /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		87889E031FB4D5ED0049561E /* FirebaseAuthUI.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = FirebaseAuthUI.strings; sourceTree = "<group>"; };
+		87EA06BB1FB60DB3005EF130 /* FirebaseFacebookAuthUI.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = FirebaseFacebookAuthUI.strings; sourceTree = "<group>"; };
 		87F2E0831FB21D79001CFA93 /* FURApp_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FURApp_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F2E0861FB21D79001CFA93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87F2E0881FB21D79001CFA93 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +120,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		87EA06BD1FB60EB4005EF130 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				87EA06BE1FB60EBB005EF130 /* Strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		87EA06BE1FB60EBB005EF130 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				87889E031FB4D5ED0049561E /* FirebaseAuthUI.strings */,
+				87EA06BB1FB60DB3005EF130 /* FirebaseFacebookAuthUI.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		87F2E07A1FB21D79001CFA93 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +162,7 @@
 		87F2E0851FB21D79001CFA93 /* FURApp_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				87EA06BD1FB60EB4005EF130 /* Resources */,
 				87F2E0B81FB21F42001CFA93 /* Domain */,
 				87F2E0B71FB21F3E001CFA93 /* Model */,
 				87F2E0B61FB21F39001CFA93 /* Presenter */,
@@ -319,10 +341,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87889E041FB4D5EE0049561E /* FirebaseAuthUI.strings in Resources */,
 				87F2E0911FB21D79001CFA93 /* LaunchScreen.storyboard in Resources */,
 				87F2E0BA1FB220A0001CFA93 /* GoogleService-Info.plist in Resources */,
 				87F2E08E1FB21D79001CFA93 /* Assets.xcassets in Resources */,
 				87F2E08C1FB21D79001CFA93 /* Main.storyboard in Resources */,
+				87EA06BC1FB60DB3005EF130 /* FirebaseFacebookAuthUI.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,6 +22,7 @@ class AuthViewController: UIViewController, FUIAuthDelegate {
         super.viewDidLoad()
         
         self.auth = Auth.auth()
+        // TODO: What happens after a succesful registration
 
         //        self.authStateListenerHandle = self.auth?.addStateDidChangeListener { (auth, user) in
         //            guard user != nil else {
