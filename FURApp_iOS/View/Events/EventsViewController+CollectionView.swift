@@ -11,12 +11,13 @@ import UIKit
 extension EventsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Configuration
-    internal func configure(collectionView: UICollectionView){
+    internal func configure(collectionView: UICollectionView, data: [Event]?){
         collectionView.register(UINib(nibName: "EventCell", bundle: nil), forCellWithReuseIdentifier: "EventCell")
         collectionView.registerSupplementaryView(EventsSectionHeader.self, kind: UICollectionElementKindSectionHeader)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+        eventsData = data
     }
     
     // MARK: - UICollectionViewDataSource
@@ -25,11 +26,14 @@ extension EventsViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return eventsData!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return EventCell.dequeue(fromCollectionView: collectionView, atIndexPath:indexPath)
+        let cell = EventCell.dequeue(fromCollectionView: collectionView, atIndexPath:indexPath)
+        cell.nameLabel.text = eventsData?[indexPath.row].name
+        cell.setNeedsUpdateConstraints()
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -50,10 +54,6 @@ extension EventsViewController: UICollectionViewDataSource, UICollectionViewDele
         }
         
         return sectionHeader
-    }
-    
-    @objc public func logOutAction(sender: UITapGestureRecognizer){
-        eventsPresenter.logOut()
     }
     
     // MARK: - UICollectionViewDelegateFlowLayout

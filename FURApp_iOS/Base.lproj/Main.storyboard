@@ -29,6 +29,10 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FW3-rk-zAw">
+                                <rect key="frame" x="0.0" y="69" width="375" height="528"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" restorationIdentifier="bottomView" translatesAutoresizingMaskIntoConstraints="NO" id="Hhz-8D-POB">
                                 <rect key="frame" x="0.0" y="548" width="375" height="70"/>
                                 <subviews>
@@ -53,15 +57,24 @@
                                     <constraint firstAttribute="trailing" secondItem="5Nc-Gt-dJQ" secondAttribute="trailing" id="ukH-yQ-Al1"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cargando próximos eventos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hs6-It-NM4">
+                                <rect key="frame" x="0.0" y="360" width="375" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Nyr-R1-6SA" firstAttribute="trailing" secondItem="Hs6-It-NM4" secondAttribute="trailing" id="1RA-EP-Cli"/>
+                            <constraint firstItem="Hhz-8D-POB" firstAttribute="top" secondItem="Hs6-It-NM4" secondAttribute="bottom" constant="170" id="4vL-gM-MNs"/>
                             <constraint firstItem="e6m-gZ-pdk" firstAttribute="leading" secondItem="Nyr-R1-6SA" secondAttribute="leading" id="Dav-Zy-5BD"/>
                             <constraint firstItem="Hhz-8D-POB" firstAttribute="leading" secondItem="Nyr-R1-6SA" secondAttribute="leading" id="N9a-BZ-KeF"/>
                             <constraint firstItem="Nyr-R1-6SA" firstAttribute="trailing" secondItem="e6m-gZ-pdk" secondAttribute="trailing" id="RAG-ec-83R"/>
                             <constraint firstItem="Nyr-R1-6SA" firstAttribute="trailing" secondItem="Hhz-8D-POB" secondAttribute="trailing" id="Sx9-bu-nLI"/>
                             <constraint firstItem="e6m-gZ-pdk" firstAttribute="top" secondItem="Nyr-R1-6SA" secondAttribute="top" id="ZAy-0r-SHc"/>
                             <constraint firstItem="Hhz-8D-POB" firstAttribute="top" secondItem="e6m-gZ-pdk" secondAttribute="bottom" id="ci5-vn-M1b"/>
+                            <constraint firstItem="Hs6-It-NM4" firstAttribute="leading" secondItem="Nyr-R1-6SA" secondAttribute="leading" id="l2P-cH-eCF"/>
                             <constraint firstItem="Hhz-8D-POB" firstAttribute="bottom" secondItem="Nyr-R1-6SA" secondAttribute="bottom" id="oLQ-Mr-h8m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nyr-R1-6SA"/>
@@ -70,6 +83,8 @@
                     <connections>
                         <outlet property="bottomInfoView" destination="Hhz-8D-POB" id="HfP-q2-ld0"/>
                         <outlet property="eventCollectionView" destination="e6m-gZ-pdk" id="VKY-wC-X40"/>
+                        <outlet property="loadingActivityIndicator" destination="FW3-rk-zAw" id="26Z-OL-YqG"/>
+                        <outlet property="loadingLabel" destination="Hs6-It-NM4" id="OkK-SZ-Qbk"/>
                         <outlet property="signUpButton" destination="5Nc-Gt-dJQ" id="Pca-el-0Mf"/>
                         <segue destination="pKd-fa-FgH" kind="presentation" identifier="presentEvent" id="4yx-CC-30Q"/>
                     </connections>

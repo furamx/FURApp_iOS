@@ -13,6 +13,7 @@ class EventCell: BaseRoundedCardCell {
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet weak var whiteBackgroundView: UIView!
     @IBOutlet weak var assistButtonView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
     
     
     internal static func dequeue(fromCollectionView collectionView: UICollectionView, atIndexPath indexPath: IndexPath) -> EventCell {

@@ -16,12 +16,14 @@ class EventsPresenter {
     
     // MARK: - Properties
     private var eventsViewController : EventsViewController?
+    private let dataManager : DataManager!
     fileprivate(set) var auth: Auth?
     fileprivate(set) var authUI: FUIAuth?
     fileprivate(set) var authStateListenerHandle: AuthStateDidChangeListenerHandle?
     
     // MARK: - Initializers
     init() {
+        dataManager = DataManager()
     }
     
     func attachView(view: EventsViewController){
@@ -44,6 +46,15 @@ class EventsPresenter {
             
             self.eventsViewController?.hideSignUpButton()
         }
+    }
+    
+    func loadData() {
+        dataManager.getEvents(fromPresenter: self)
+    }
+    
+    //MARK: - Present Data
+    public func show(data: [Event]?) {
+        eventsViewController?.show(data: data)
     }
     
     // MARK: - Actions

@@ -12,21 +12,26 @@ import FirebaseAuthUI
 class EventsViewController: UIViewController, FUIAuthDelegate {
     
     // MARK: - Properties
-    var eventsPresenter = EventsPresenter()
+    var eventsPresenter: EventsPresenter!
     var statusBarShouldBeHidden = false
+    var eventsData: [Event]?
     
     // MARK: - IBOutlets
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var eventCollectionView: UICollectionView!
     @IBOutlet weak var bottomInfoView: UIView!
+    @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var loadingLabel: UILabel!
     
     // MARK: - ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        eventsPresenter = EventsPresenter()
         eventsPresenter.attachView(view: self)
         eventsPresenter.setupAuth()
-        configure(collectionView: eventCollectionView)
+        eventsPresenter.loadData()
+        loadingActivityIndicator.startAnimating()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +59,10 @@ class EventsViewController: UIViewController, FUIAuthDelegate {
     // MARK: - IBActions
     @IBAction func openLoginButton(_ sender: UIButton) {
         eventsPresenter.openLogin()
+    }
+    
+    @objc public func logOutAction(sender: UITapGestureRecognizer){
+        eventsPresenter.logOut()
     }
     
     // MARK: - Firebase Authentication
@@ -93,6 +102,13 @@ class EventsViewController: UIViewController, FUIAuthDelegate {
                 constraint.constant = 70
             }
         }
+        updateUI()
+    }
+    
+    func show(data: [Event]?) {
+        configure(collectionView: eventCollectionView, data: data)
+        loadingActivityIndicator.stopAnimating()
+        loadingLabel.isHidden = true
         updateUI()
     }
     
