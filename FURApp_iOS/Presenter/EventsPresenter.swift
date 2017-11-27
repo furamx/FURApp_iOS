@@ -73,7 +73,7 @@ class EventsPresenter {
         }
         eventsViewController?.showSignUpButton()
         
-        let alert = UIAlertController(title: "¡Adios!", message: "Esperamos verte pronto", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "¡Adiós!", message: "Esperamos verte pronto", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         eventsViewController?.present(alert, animated: true, completion: nil)
     }

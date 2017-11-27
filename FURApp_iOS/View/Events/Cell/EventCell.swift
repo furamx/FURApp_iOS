@@ -10,10 +10,14 @@ import UIKit
 
 class EventCell: BaseRoundedCardCell {
 
-    @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet weak var whiteBackgroundView: UIView!
-    @IBOutlet weak var assistButtonView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var assistButtonView: UIView!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var bottomBackgroundView: UIView!
     
     
     internal static func dequeue(fromCollectionView collectionView: UICollectionView, atIndexPath indexPath: IndexPath) -> EventCell {
@@ -25,11 +29,9 @@ class EventCell: BaseRoundedCardCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        whiteBackgroundView.roundCorners(corners: [.topLeft, .topRight], radius: 14.0)
-        assistButtonView.roundCorners(corners: [.topRight, .topLeft, .bottomLeft, .bottomRight], radius: 14.0)
-        imageView.layer.masksToBounds = true
+        
+        assistButtonView.layer.cornerRadius = 14.0
         imageView.layer.cornerRadius = 14.0
+        upperView.layer.cornerRadius = 14.0
     }
-
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 extension EventsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -31,8 +32,21 @@ extension EventsViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = EventCell.dequeue(fromCollectionView: collectionView, atIndexPath:indexPath)
-        cell.nameLabel.text = eventsData?[indexPath.row].name
-        cell.setNeedsUpdateConstraints()
+        let event = eventsData?[indexPath.row]
+        cell.nameLabel.text = event?.name
+        
+        if let date = event?.start_time {
+            let eventsHelper = EventsHelper()
+            cell.timeLabel.text = eventsHelper.getTime(fromDate: date)
+            cell.dateLabel.text = eventsHelper.getDate(fromDate: date)
+            cell.cityLabel.text = "\(event?.place?.location?.city ?? "Ciudad"), \(event?.place?.location?.country ?? "País")"
+        }
+        
+        if let imgString = event?.cover?.source! {
+            let imageUrl = URL(string: imgString)
+            cell.imageView.kf.setImage(with: imageUrl)
+        }
+        
         return cell
     }
     
@@ -67,9 +81,10 @@ extension EventsViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView.cellForItem(at: indexPath) != nil {
             statusBarShouldBeHidden = true
-            UIView.animate(withDuration: 0.25) {
+            UIView.animate(withDuration: 0.6) {
                 self.setNeedsStatusBarAppearanceUpdate()
             }
+            self.eventSelected = eventsData?[indexPath.row]
             performSegue(withIdentifier: "presentEvent", sender: self)
         }
     }

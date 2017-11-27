@@ -15,6 +15,7 @@ class EventsViewController: UIViewController, FUIAuthDelegate {
     var eventsPresenter: EventsPresenter!
     var statusBarShouldBeHidden = false
     var eventsData: [Event]?
+    var eventSelected: Event?
     
     // MARK: - IBOutlets
     @IBOutlet weak var signUpButton: UIButton!
@@ -115,5 +116,15 @@ class EventsViewController: UIViewController, FUIAuthDelegate {
     func updateUI(){
         self.view.layoutIfNeeded()
         self.eventCollectionView.reloadSections(IndexSet(0 ..< 1))
+    }
+    
+    // MARK: - Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "presentEvent") {
+            let eventDetailPresenter = EventDetailPresenter()
+            eventDetailPresenter.load(data: eventSelected)
+            let eventDetailController = segue.destination as! EventDetailViewController
+            eventDetailController.presenter = eventDetailPresenter
+        }
     }
 }

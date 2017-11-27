@@ -26,7 +26,7 @@ struct Event {
     init(withDictionary dict:[String:AnyObject]) {
         let mxLocale = Locale(identifier: "es_MX")
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-mm-dd'T'HH:mm:ssZZZZZ"
+        dateFormatter.dateFormat = "yyyy-M-dd'T'HH:mm:ssZZZZZ"
         dateFormatter.locale = mxLocale
         
         if let _ = dict["cover"] {

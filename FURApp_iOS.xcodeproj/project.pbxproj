@@ -11,8 +11,8 @@
 		801F38C99DE65194D181B5DF /* Pods_FURApp_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F951A46CDCDDD99A4C1B1A8 /* Pods_FURApp_iOSUITests.framework */; };
 		871469981FC48952000E7D89 /* FacebookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871469971FC48952000E7D89 /* FacebookRequest.swift */; };
 		8714699A1FC493DF000E7D89 /* FirebaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871469991FC493DF000E7D89 /* FirebaseRequest.swift */; };
+		87488F7F1FC8E22900162E0D /* EventsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87488F7E1FC8E22900162E0D /* EventsHelper.swift */; };
 		874CDBA11FC737D100BD344E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874CDBA01FC737D100BD344E /* Event.swift */; };
-		8762C8461FBF572B00D63FFF /* UIView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762C8451FBF572B00D63FFF /* UIView+RoundCorners.swift */; };
 		877D2C631FC5DBA9000C8273 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D2C621FC5DBA9000C8273 /* DataManager.swift */; };
 		877D2C651FC5F564000C8273 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D2C641FC5F564000C8273 /* DataParser.swift */; };
 		87889E041FB4D5EE0049561E /* FirebaseAuthUI.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87889E031FB4D5ED0049561E /* FirebaseAuthUI.strings */; };
@@ -34,6 +34,8 @@
 		87F2E09C1FB21D79001CFA93 /* FURApp_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2E09B1FB21D79001CFA93 /* FURApp_iOSTests.swift */; };
 		87F2E0A71FB21D79001CFA93 /* FURApp_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2E0A61FB21D79001CFA93 /* FURApp_iOSUITests.swift */; };
 		87F2E0BA1FB220A0001CFA93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87F2E0B91FB220A0001CFA93 /* GoogleService-Info.plist */; };
+		87F31BC71FCB482F002579AA /* BottomRoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F31BC61FCB482F002579AA /* BottomRoundCorners.swift */; };
+		87F31BC91FCB569C002579AA /* EventDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F31BC81FCB569C002579AA /* EventDetailPresenter.swift */; };
 		87FF21EE1FBCB18E009C13BC /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF21ED1FBCB18E009C13BC /* EventsViewController.swift */; };
 		87FF21F01FBCC061009C13BC /* EventsViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF21EF1FBCC061009C13BC /* EventsViewController+CollectionView.swift */; };
 		87FF21F21FBCC1D0009C13BC /* BaseRoundedCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF21F11FBCC1D0009C13BC /* BaseRoundedCardCell.swift */; };
@@ -68,8 +70,8 @@
 		7F951A46CDCDDD99A4C1B1A8 /* Pods_FURApp_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FURApp_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		871469971FC48952000E7D89 /* FacebookRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookRequest.swift; sourceTree = "<group>"; };
 		871469991FC493DF000E7D89 /* FirebaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRequest.swift; sourceTree = "<group>"; };
+		87488F7E1FC8E22900162E0D /* EventsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsHelper.swift; sourceTree = "<group>"; };
 		874CDBA01FC737D100BD344E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		8762C8451FBF572B00D63FFF /* UIView+RoundCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorners.swift"; sourceTree = "<group>"; };
 		877D2C621FC5DBA9000C8273 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		877D2C641FC5F564000C8273 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		87889E031FB4D5ED0049561E /* FirebaseAuthUI.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = FirebaseAuthUI.strings; sourceTree = "<group>"; };
@@ -97,6 +99,8 @@
 		87F2E0A61FB21D79001CFA93 /* FURApp_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FURApp_iOSUITests.swift; sourceTree = "<group>"; };
 		87F2E0A81FB21D79001CFA93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87F2E0B91FB220A0001CFA93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		87F31BC61FCB482F002579AA /* BottomRoundCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRoundCorners.swift; sourceTree = "<group>"; };
+		87F31BC81FCB569C002579AA /* EventDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailPresenter.swift; sourceTree = "<group>"; };
 		87FF21ED1FBCB18E009C13BC /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		87FF21EF1FBCC061009C13BC /* EventsViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		87FF21F11FBCC1D0009C13BC /* BaseRoundedCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRoundedCardCell.swift; sourceTree = "<group>"; };
@@ -174,7 +178,7 @@
 				8798FCA11FBD074D008000AE /* UIView+Constraints.swift */,
 				8798FCA31FBD0772008000AE /* Reusable.swift */,
 				8798FCA51FBD07A0008000AE /* UICollectionView+Reusable.swift */,
-				8762C8451FBF572B00D63FFF /* UIView+RoundCorners.swift */,
+				87F31BC61FCB482F002579AA /* BottomRoundCorners.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -276,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				87D0DB281FC357B300E50123 /* EventsPresenter.swift */,
+				87F31BC81FCB569C002579AA /* EventDetailPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 		87F2E0B81FB21F42001CFA93 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				87488F7E1FC8E22900162E0D /* EventsHelper.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -563,6 +569,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -574,6 +581,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -638,17 +646,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8762C8461FBF572B00D63FFF /* UIView+RoundCorners.swift in Sources */,
+				87F31BC71FCB482F002579AA /* BottomRoundCorners.swift in Sources */,
 				87FF21F01FBCC061009C13BC /* EventsViewController+CollectionView.swift in Sources */,
 				87F2E0891FB21D79001CFA93 /* MainTabBarController.swift in Sources */,
 				871469981FC48952000E7D89 /* FacebookRequest.swift in Sources */,
 				874CDBA11FC737D100BD344E /* Event.swift in Sources */,
 				877D2C651FC5F564000C8273 /* DataParser.swift in Sources */,
+				87488F7F1FC8E22900162E0D /* EventsHelper.swift in Sources */,
 				8798FC9E1FBD06D1008000AE /* GradientView.swift in Sources */,
 				8798FCA21FBD074D008000AE /* UIView+Constraints.swift in Sources */,
 				8798FCA61FBD07A0008000AE /* UICollectionView+Reusable.swift in Sources */,
 				877D2C631FC5DBA9000C8273 /* DataManager.swift in Sources */,
 				87FF21F21FBCC1D0009C13BC /* BaseRoundedCardCell.swift in Sources */,
+				87F31BC91FCB569C002579AA /* EventDetailPresenter.swift in Sources */,
 				8798FCA41FBD0772008000AE /* Reusable.swift in Sources */,
 				87A3288D1FBCDF1B007E1567 /* EventDetailViewController.swift in Sources */,
 				87C907B61FBF46C500CC49B3 /* EventsSectionHeader.swift in Sources */,

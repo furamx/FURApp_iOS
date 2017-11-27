@@ -81,6 +81,7 @@ class BaseRoundedCardCell: UICollectionViewCell {
         // Long Press Gesture Recognizer
         longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture(gestureRecognizer:)))
         longPressGestureRecognizer?.minimumPressDuration = 0.1
+        longPressGestureRecognizer?.cancelsTouchesInView = false
         addGestureRecognizer(longPressGestureRecognizer!)
     }
     

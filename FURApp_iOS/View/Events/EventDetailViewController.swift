@@ -7,21 +7,30 @@
 //
 
 import UIKit
+import MapKit
 
 class EventDetailViewController: UIViewController, UIScrollViewDelegate {
     
     //MARK: - Properties
-    @IBOutlet var detailScrollView: UIScrollView!
-    @IBOutlet weak var assistView: UIView!
-
-    //MARK: - ViewController
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    var presenter: EventDetailPresenter?
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet var locationMapView: MKMapView!
+    @IBOutlet weak var assistButtonView: UIView!
+    
+    // MARK: - ViewController
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        UIView.animate(withDuration: 0.8) {
-            self.assistView.roundCorners(corners: [.topRight, .topLeft, .bottomLeft, .bottomRight], radius: 14.0)
-            self.detailScrollView.roundCorners(corners: [.topRight, .topLeft], radius: 25.0)
-        }
+        assistButtonView.layer.cornerRadius = 14.0
+        presenter?.attach(view: self)
+        presenter?.show()
     }
     
     // MARK: - IBActions

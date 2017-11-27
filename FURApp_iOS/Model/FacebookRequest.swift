@@ -18,7 +18,11 @@ class FacebookRequest {
     //MARK: - Initializers
     init(withAccessToken token: String) {
         accessToken = token
+        // FURA
         pageId = "681255215248937"
+        
+        // Enjambre (Porque fura no tiene eventos próximos
+        // pageId = "21162719649"
     }
     
     func getPageEvents(completitionHandler: @escaping ([[String:AnyObject]]) -> ()) {
