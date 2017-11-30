@@ -10,6 +10,7 @@ import Foundation
 
 struct EventsHelper {
     
+    // I'm not sure if this is the correct way of getting month names, but it works
     func numberToText(_ number: Int) -> String {
         switch number {
             case 1:

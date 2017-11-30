@@ -9,6 +9,7 @@
 import UIKit
 import CoreMotion
 
+// This class is only to give appearance to the cell.
 class BaseRoundedCardCell: UICollectionViewCell {
     internal static let cellHeight: CGFloat = 380.0
     

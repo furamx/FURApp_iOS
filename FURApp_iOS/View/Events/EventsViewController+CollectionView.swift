@@ -30,6 +30,7 @@ extension EventsViewController: UICollectionViewDataSource, UICollectionViewDele
         return eventsData!.count
     }
     
+    // Fill data of each cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = EventCell.dequeue(fromCollectionView: collectionView, atIndexPath:indexPath)
         let event = eventsData?[indexPath.row]
@@ -50,10 +51,12 @@ extension EventsViewController: UICollectionViewDataSource, UICollectionViewDele
         return cell
     }
     
+    // How big each cell will be
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: EventsSectionHeader.viewHeight)
     }
     
+    // Set header of collection view
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let sectionHeader = EventsSectionHeader.dequeue(fromCollectionView: collectionView, ofKind: kind, atIndexPath: indexPath)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(logOutAction(sender:)))

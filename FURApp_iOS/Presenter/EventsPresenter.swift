@@ -39,6 +39,7 @@ class EventsPresenter {
         self.authUI?.delegate = eventsViewController
         self.authUI?.providers = [FUIFacebookAuth()]
         self.auth = Auth.auth()
+        // If a user exists, hide the big signUp button
         self.auth?.addStateDidChangeListener { (auth, user) in
             guard user != nil else {
                 return
