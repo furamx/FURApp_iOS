@@ -179,7 +179,7 @@
                                                 <color key="backgroundColor" red="0.18039215689999999" green="0.72156862749999995" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejE-hm-rqs" userLabel="AssistButtonView">
-                                                <rect key="frame" x="285" y="20" width="70" height="30"/>
+                                                <rect key="frame" x="255" y="20" width="70" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vk-oq-w5l">
                                                         <rect key="frame" x="15" y="1.5" width="40" height="27"/>
@@ -197,7 +197,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="DTh-sR-A6G">
-                                                <rect key="frame" x="20" y="9.5" width="245" height="51"/>
+                                                <rect key="frame" x="50" y="9.5" width="185" height="51"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27 de Diciembre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gz5-DQ-F26">
                                                         <rect key="frame" x="0.0" y="0.0" width="183.5" height="31.5"/>
@@ -219,12 +219,12 @@
                                             <constraint firstAttribute="height" constant="70" id="4x3-2b-3Xi"/>
                                             <constraint firstItem="ejE-hm-rqs" firstAttribute="centerY" secondItem="3Yh-hT-Hq5" secondAttribute="centerY" id="Cpn-m2-uDx"/>
                                             <constraint firstItem="ogW-um-uD0" firstAttribute="leading" secondItem="3Yh-hT-Hq5" secondAttribute="leading" id="Gue-Sd-Nqv"/>
-                                            <constraint firstItem="DTh-sR-A6G" firstAttribute="leading" secondItem="3Yh-hT-Hq5" secondAttribute="leading" constant="20" id="JFe-3c-zml"/>
+                                            <constraint firstItem="DTh-sR-A6G" firstAttribute="leading" secondItem="3Yh-hT-Hq5" secondAttribute="leading" constant="50" id="JFe-3c-zml"/>
                                             <constraint firstItem="DTh-sR-A6G" firstAttribute="centerY" secondItem="3Yh-hT-Hq5" secondAttribute="centerY" id="P6S-IB-3al"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="ffu-r3-zHp"/>
                                             <constraint firstAttribute="bottom" secondItem="ogW-um-uD0" secondAttribute="bottom" id="j18-YM-ct2"/>
                                             <constraint firstItem="ogW-um-uD0" firstAttribute="top" secondItem="3Yh-hT-Hq5" secondAttribute="top" id="pzq-3L-MVJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="ejE-hm-rqs" secondAttribute="trailing" constant="20" id="svz-7m-MHJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="ejE-hm-rqs" secondAttribute="trailing" constant="50" id="svz-7m-MHJ"/>
                                             <constraint firstItem="ejE-hm-rqs" firstAttribute="leading" secondItem="DTh-sR-A6G" secondAttribute="trailing" constant="20" id="xjt-cQ-HJa"/>
                                         </constraints>
                                         <viewLayoutGuide key="safeArea" id="5LZ-0O-4a9"/>
