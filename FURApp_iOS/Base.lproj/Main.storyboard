@@ -32,6 +32,13 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FW3-rk-zAw">
                                 <rect key="frame" x="177.5" y="343.5" width="20" height="20"/>
                             </activityIndicatorView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WarningImage" translatesAutoresizingMaskIntoConstraints="NO" id="Cae-Mh-Cgl">
+                                <rect key="frame" x="177.5" y="274" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="G2a-BC-PLg"/>
+                                    <constraint firstAttribute="height" constant="20" id="xyt-fN-8N0"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" restorationIdentifier="bottomView" translatesAutoresizingMaskIntoConstraints="NO" id="Hhz-8D-POB">
                                 <rect key="frame" x="0.0" y="548" width="375" height="70"/>
                                 <subviews>
@@ -67,6 +74,7 @@
                         <constraints>
                             <constraint firstItem="Nyr-R1-6SA" firstAttribute="trailing" secondItem="Hs6-It-NM4" secondAttribute="trailing" id="1RA-EP-Cli"/>
                             <constraint firstItem="e6m-gZ-pdk" firstAttribute="leading" secondItem="Nyr-R1-6SA" secondAttribute="leading" id="Dav-Zy-5BD"/>
+                            <constraint firstItem="Cae-Mh-Cgl" firstAttribute="centerX" secondItem="e6m-gZ-pdk" secondAttribute="centerX" id="H3P-QD-k0X"/>
                             <constraint firstItem="Hhz-8D-POB" firstAttribute="leading" secondItem="Nyr-R1-6SA" secondAttribute="leading" id="N9a-BZ-KeF"/>
                             <constraint firstItem="Nyr-R1-6SA" firstAttribute="trailing" secondItem="e6m-gZ-pdk" secondAttribute="trailing" id="RAG-ec-83R"/>
                             <constraint firstItem="Nyr-R1-6SA" firstAttribute="trailing" secondItem="Hhz-8D-POB" secondAttribute="trailing" id="Sx9-bu-nLI"/>
@@ -74,6 +82,7 @@
                             <constraint firstItem="Hhz-8D-POB" firstAttribute="top" secondItem="e6m-gZ-pdk" secondAttribute="bottom" id="ci5-vn-M1b"/>
                             <constraint firstItem="FW3-rk-zAw" firstAttribute="centerY" secondItem="DYe-3a-Jwg" secondAttribute="centerY" constant="20" id="jtr-pI-KaP"/>
                             <constraint firstItem="Hs6-It-NM4" firstAttribute="leading" secondItem="Nyr-R1-6SA" secondAttribute="leading" id="l2P-cH-eCF"/>
+                            <constraint firstItem="Cae-Mh-Cgl" firstAttribute="centerY" secondItem="e6m-gZ-pdk" secondAttribute="centerY" id="nOL-K3-UoD"/>
                             <constraint firstItem="Hhz-8D-POB" firstAttribute="bottom" secondItem="Nyr-R1-6SA" secondAttribute="bottom" id="oLQ-Mr-h8m"/>
                             <constraint firstItem="FW3-rk-zAw" firstAttribute="centerX" secondItem="DYe-3a-Jwg" secondAttribute="centerX" id="q4a-pW-b5X"/>
                             <constraint firstItem="Hs6-It-NM4" firstAttribute="top" secondItem="FW3-rk-zAw" secondAttribute="bottom" constant="20" id="ui4-xT-s7C"/>
@@ -87,6 +96,7 @@
                         <outlet property="loadingActivityIndicator" destination="FW3-rk-zAw" id="26Z-OL-YqG"/>
                         <outlet property="loadingLabel" destination="Hs6-It-NM4" id="OkK-SZ-Qbk"/>
                         <outlet property="signUpButton" destination="5Nc-Gt-dJQ" id="Pca-el-0Mf"/>
+                        <outlet property="warningInternetImageView" destination="Cae-Mh-Cgl" id="yft-Eg-TKN"/>
                         <segue destination="gpV-cz-tXg" kind="presentation" identifier="presentEvent" id="bsB-LF-C4t"/>
                     </connections>
                 </viewController>
@@ -290,5 +300,6 @@
         <image name="CalendarTabIcon" width="30" height="30"/>
         <image name="CloseButtonLight" width="40" height="40"/>
         <image name="ParkDummyImage" width="341" height="227"/>
+        <image name="WarningImage" width="192" height="160"/>
     </resources>
 </document>

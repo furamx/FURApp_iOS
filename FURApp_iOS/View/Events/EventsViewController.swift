@@ -23,6 +23,7 @@ class EventsViewController: UIViewController, FUIAuthDelegate {
     @IBOutlet weak var bottomInfoView: UIView!
     @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loadingLabel: UILabel!
+    @IBOutlet weak var warningInternetImageView: UIImageView!
     
     // MARK: - ViewController
     override func viewDidLoad() {
@@ -31,8 +32,15 @@ class EventsViewController: UIViewController, FUIAuthDelegate {
         eventsPresenter = EventsPresenter()
         eventsPresenter.attachView(view: self)
         eventsPresenter.setupAuth()
-        eventsPresenter.loadData()
-        loadingActivityIndicator.startAnimating()
+        
+        if (ConnectionHelper.isConnectedToNetwork()) {
+            eventsPresenter.loadData()
+            loadingActivityIndicator.startAnimating()
+        }else {
+            warningInternetImageView.isHidden = false
+            loadingActivityIndicator.stopAnimating()
+            loadingLabel.text = "No tienes una conexión a internet"
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
