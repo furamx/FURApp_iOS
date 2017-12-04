@@ -7,7 +7,10 @@ target 'FURApp_iOS' do
 
   # Pods for FURApp_iOS
   pod 'FirebaseUI/Auth'
-  pod 'FirebaseUI/Facebook' 
+  pod 'FirebaseUI/Facebook'
+  pod 'Firebase/Database'
+  pod 'FacebookCore'
+  pod 'Kingfisher', '~> 4.0'
 
   target 'FURApp_iOSTests' do
     inherit! :search_paths
