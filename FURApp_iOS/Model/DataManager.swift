@@ -24,4 +24,16 @@ class DataManager {
             }
         }
     }
+    
+    func getEventOfToday(fromPresenter presenter: VolunteerPresenter, today: String, tomorrow: String){
+        let firebaseRequest = FirebaseRequest()
+        firebaseRequest.getFacebookToken { (token) in
+            let facebookRequest = FacebookRequest(withAccessToken: token!)
+            facebookRequest.getEventOfToday(since: today, until: tomorrow) { (event) in
+                let dataParser = DataParser()
+                let eventObject = dataParser.parse(event: event)
+                presenter.show(data: eventObject)
+            }
+        }
+    }
 }

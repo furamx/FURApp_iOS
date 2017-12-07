@@ -11,6 +11,8 @@
 		801F38C99DE65194D181B5DF /* Pods_FURApp_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F951A46CDCDDD99A4C1B1A8 /* Pods_FURApp_iOSUITests.framework */; };
 		871469981FC48952000E7D89 /* FacebookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871469971FC48952000E7D89 /* FacebookRequest.swift */; };
 		8714699A1FC493DF000E7D89 /* FirebaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871469991FC493DF000E7D89 /* FirebaseRequest.swift */; };
+		871492EE1FD8500A00700185 /* VolunteerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871492ED1FD8500A00700185 /* VolunteerPresenter.swift */; };
+		873F0D821FD5B01D00514BDD /* VolunteerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873F0D811FD5B01D00514BDD /* VolunteerViewController.swift */; };
 		87488F7F1FC8E22900162E0D /* EventsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87488F7E1FC8E22900162E0D /* EventsHelper.swift */; };
 		874CDBA11FC737D100BD344E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874CDBA01FC737D100BD344E /* Event.swift */; };
 		877D2C631FC5DBA9000C8273 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D2C621FC5DBA9000C8273 /* DataManager.swift */; };
@@ -71,6 +73,8 @@
 		7F951A46CDCDDD99A4C1B1A8 /* Pods_FURApp_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FURApp_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		871469971FC48952000E7D89 /* FacebookRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookRequest.swift; sourceTree = "<group>"; };
 		871469991FC493DF000E7D89 /* FirebaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRequest.swift; sourceTree = "<group>"; };
+		871492ED1FD8500A00700185 /* VolunteerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerPresenter.swift; sourceTree = "<group>"; };
+		873F0D811FD5B01D00514BDD /* VolunteerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerViewController.swift; sourceTree = "<group>"; };
 		87488F7E1FC8E22900162E0D /* EventsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsHelper.swift; sourceTree = "<group>"; };
 		874CDBA01FC737D100BD344E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		877D2C621FC5DBA9000C8273 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -164,6 +168,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		873F0D801FD5AFF800514BDD /* Volunteer */ = {
+			isa = PBXGroup;
+			children = (
+				873F0D811FD5B01D00514BDD /* VolunteerViewController.swift */,
+			);
+			path = Volunteer;
+			sourceTree = "<group>";
+		};
 		874CDB9C1FC737A400BD344E /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,7 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				87EA06BD1FB60EB4005EF130 /* Resources */,
-				87F2E0B81FB21F42001CFA93 /* Domain */,
+				87F2E0B81FB21F42001CFA93 /* Helper */,
 				87F2E0B71FB21F3E001CFA93 /* Model */,
 				87F2E0B61FB21F39001CFA93 /* Presenter */,
 				87F2E0B51FB21F31001CFA93 /* View */,
@@ -272,6 +284,7 @@
 		87F2E0B51FB21F31001CFA93 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				873F0D801FD5AFF800514BDD /* Volunteer */,
 				87FF70D21FBDFE4B007681CC /* Events */,
 				87F2E0881FB21D79001CFA93 /* MainTabBarController.swift */,
 			);
@@ -283,6 +296,7 @@
 			children = (
 				87D0DB281FC357B300E50123 /* EventsPresenter.swift */,
 				87F31BC81FCB569C002579AA /* EventDetailPresenter.swift */,
+				871492ED1FD8500A00700185 /* VolunteerPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -299,13 +313,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		87F2E0B81FB21F42001CFA93 /* Domain */ = {
+		87F2E0B81FB21F42001CFA93 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				87488F7E1FC8E22900162E0D /* EventsHelper.swift */,
 				879553641FD0859F00F8B17D /* ConnectionHelper.swift */,
 			);
-			path = Domain;
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		87FF70D21FBDFE4B007681CC /* Events */ = {
@@ -650,6 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87F31BC71FCB482F002579AA /* BottomRoundCorners.swift in Sources */,
+				871492EE1FD8500A00700185 /* VolunteerPresenter.swift in Sources */,
 				87FF21F01FBCC061009C13BC /* EventsViewController+CollectionView.swift in Sources */,
 				87F2E0891FB21D79001CFA93 /* MainTabBarController.swift in Sources */,
 				871469981FC48952000E7D89 /* FacebookRequest.swift in Sources */,
@@ -668,6 +683,7 @@
 				87C907B61FBF46C500CC49B3 /* EventsSectionHeader.swift in Sources */,
 				87FF21EE1FBCB18E009C13BC /* EventsViewController.swift in Sources */,
 				87D0DB291FC357B300E50123 /* EventsPresenter.swift in Sources */,
+				873F0D821FD5B01D00514BDD /* VolunteerViewController.swift in Sources */,
 				8714699A1FC493DF000E7D89 /* FirebaseRequest.swift in Sources */,
 				87F2E0871FB21D79001CFA93 /* AppDelegate.swift in Sources */,
 				8798FCA01FBD0725008000AE /* BaseView.swift in Sources */,

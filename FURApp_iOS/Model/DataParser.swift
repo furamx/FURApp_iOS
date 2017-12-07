@@ -22,4 +22,17 @@ class DataParser {
         }
         return eventObjects
     }
+    
+    func parse(event: [[String:AnyObject]]) -> Event? {
+        if (event.isEmpty){
+            return nil
+        }
+        
+        if let first = event.first {
+            let todayEvent = Event(withDictionary: first)
+            return todayEvent
+        }else {
+            return nil
+        }
+    }
 }
