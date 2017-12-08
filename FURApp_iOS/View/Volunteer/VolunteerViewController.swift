@@ -27,7 +27,8 @@ class VolunteerViewController: UIViewController {
     
     // MARK: Event view outlets
     @IBOutlet weak var eventNameLabel: UILabel!
-    @IBOutlet weak var accessButton: UIButton!
+    @IBOutlet weak var leaderButton: UIButton!
+    @IBOutlet weak var volunteerButton: UIButton!
     
     // MARK: - ViewController
     override func viewDidLoad() {
@@ -57,7 +58,39 @@ class VolunteerViewController: UIViewController {
     func display(data: Event) {
         self.loadingIndicator.stopAnimating()
         self.eventView.isHidden = false
-        accessButton.layer.cornerRadius = 30.0
+        leaderButton.layer.cornerRadius = 30.0
         eventNameLabel.text = data.name
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction func leaderButtonClick(_ sender: Any) {
+        self.presenter.leaderAccessEvent()
+    }
+    
+    // MARK: - Presenter response
+    
+    func requestForLocation() {
+        let alert = UIAlertController(title: "Activa tu localización", message: "Para poder ser líder de equipo necesitamos saber que te encuentras en el evento. Dirígete a Ajustes -> FURApp y activa la localización, o sólo ve el tutorial.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Entiendo", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func requestRegistration() {
+        let alert = UIAlertController(title: "¡Regístrate!", message: "Para poder ser líder de equipo necesitas estar registrado. Navega a la sección de eventos y da click al botón para unirte.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Entiendo", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func accessLeaderPermitted() {
+        let alert = UIAlertController(title: "Bienvenido Líder", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Gracias", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func accessLeaderDenied() {
+        let alert = UIAlertController(title: "Estás muy lejos del evento", message: "Acércate más para convertirte en líder. Si no, puedes acceder como voluntario.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Entendido", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

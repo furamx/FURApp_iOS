@@ -22,7 +22,7 @@ class FacebookRequest {
         // pageId = "681255215248937"
         
         // Página con evento activo hoy
-        pageId = "581448722019284"
+        pageId = "111061232291851"
     }
     
     func getPageEvents(completitionHandler: @escaping ([[String:AnyObject]]) -> ()) {

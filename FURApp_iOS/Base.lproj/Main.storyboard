@@ -171,42 +171,67 @@
                                     <constraint firstItem="20u-4l-cs4" firstAttribute="centerY" secondItem="min-eQ-ydn" secondAttribute="centerY" id="y7t-f9-e6e"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uv6-BQ-wQD">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uv6-BQ-wQD">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nuestro evento" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q70-8p-JiR">
-                                        <rect key="frame" x="20" y="283.5" width="335" height="31.5"/>
+                                        <rect key="frame" x="20" y="131" width="335" height="31.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eat-4i-duB">
-                                        <rect key="frame" x="62" y="345" width="250" height="60"/>
+                                        <rect key="frame" x="62" y="331" width="250" height="60"/>
                                         <color key="backgroundColor" red="0.18039215689999999" green="0.72156862749999995" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="0L9-CK-csu"/>
                                             <constraint firstAttribute="height" constant="60" id="ReK-DY-Hy5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                        <state key="normal" title="Participar">
+                                        <state key="normal" title="Líder de equipo">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="leaderButtonClick:" destination="5M2-D0-Cho" eventType="touchUpInside" id="OMu-r4-4Wt"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido a" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTJ-nQ-2LL">
-                                        <rect key="frame" x="116" y="232" width="143.5" height="31.5"/>
+                                        <rect key="frame" x="116" y="79.5" width="143.5" height="31.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiero ser:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41I-3F-cD4">
+                                        <rect key="frame" x="139.5" y="287" width="95" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDM-vU-KOP">
+                                        <rect key="frame" x="62" y="401" width="250" height="60"/>
+                                        <color key="backgroundColor" red="0.18039215689999999" green="0.72156862749999995" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="3fc-h5-Vaf"/>
+                                            <constraint firstAttribute="height" constant="60" id="HdA-ch-9xF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <state key="normal" title="Voluntario">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="41I-3F-cD4" firstAttribute="centerX" secondItem="uv6-BQ-wQD" secondAttribute="centerX" id="0tJ-DG-X7y"/>
                                     <constraint firstItem="Eat-4i-duB" firstAttribute="centerX" secondItem="uv6-BQ-wQD" secondAttribute="centerX" id="16j-ft-QLo"/>
+                                    <constraint firstItem="Eat-4i-duB" firstAttribute="top" secondItem="41I-3F-cD4" secondAttribute="bottom" constant="20" id="DES-1q-8pf"/>
+                                    <constraint firstItem="41I-3F-cD4" firstAttribute="baseline" secondItem="Q70-8p-JiR" secondAttribute="baseline" priority="997" constant="150" id="FF9-4t-fOJ"/>
                                     <constraint firstAttribute="trailing" secondItem="Q70-8p-JiR" secondAttribute="trailing" constant="20" id="FmY-WN-mew"/>
-                                    <constraint firstItem="Q70-8p-JiR" firstAttribute="leading" secondItem="uv6-BQ-wQD" secondAttribute="leading" constant="20" id="JpJ-XC-cju"/>
                                     <constraint firstItem="Q70-8p-JiR" firstAttribute="centerX" secondItem="uv6-BQ-wQD" secondAttribute="centerX" id="VwG-yH-4M8"/>
-                                    <constraint firstItem="Q70-8p-JiR" firstAttribute="centerY" secondItem="uv6-BQ-wQD" secondAttribute="centerY" id="iTp-DL-cwc"/>
+                                    <constraint firstItem="aTJ-nQ-2LL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uv6-BQ-wQD" secondAttribute="top" constant="20" id="ZMq-PT-Is8"/>
+                                    <constraint firstItem="TDM-vU-KOP" firstAttribute="top" secondItem="Eat-4i-duB" secondAttribute="bottom" constant="10" id="fPi-0K-pSI"/>
                                     <constraint firstItem="aTJ-nQ-2LL" firstAttribute="centerX" secondItem="uv6-BQ-wQD" secondAttribute="centerX" id="lmZ-04-FYK"/>
-                                    <constraint firstItem="Eat-4i-duB" firstAttribute="top" secondItem="Q70-8p-JiR" secondAttribute="bottom" constant="30" id="poM-TM-hYv"/>
+                                    <constraint firstItem="41I-3F-cD4" firstAttribute="centerY" secondItem="uv6-BQ-wQD" secondAttribute="centerY" id="mrQ-Nf-7Dk"/>
+                                    <constraint firstItem="TDM-vU-KOP" firstAttribute="centerX" secondItem="uv6-BQ-wQD" secondAttribute="centerX" id="qjs-I3-UHV"/>
                                     <constraint firstItem="Q70-8p-JiR" firstAttribute="top" secondItem="aTJ-nQ-2LL" secondAttribute="bottom" constant="20" id="y0k-jz-EwD"/>
                                 </constraints>
                             </view>
@@ -228,19 +253,26 @@
                             <constraint firstItem="min-eQ-ydn" firstAttribute="trailing" secondItem="ndB-Hv-K9J" secondAttribute="trailing" id="ren-hB-YbH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ndB-Hv-K9J"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="min-eQ-ydn"/>
+                                <exclude reference="qfj-Sw-Ug3"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Voluntariado" image="VolunteerTabIcon" id="Xcp-hm-PDW"/>
                     <connections>
-                        <outlet property="accessButton" destination="Eat-4i-duB" id="4Zt-l5-4eR"/>
                         <outlet property="eventNameLabel" destination="Q70-8p-JiR" id="7Bh-Dk-hn6"/>
                         <outlet property="eventView" destination="uv6-BQ-wQD" id="uoJ-Po-rko"/>
                         <outlet property="internetConnectionLabel" destination="93r-2g-BHh" id="Mtx-bO-zYF"/>
+                        <outlet property="leaderButton" destination="Eat-4i-duB" id="4Zt-l5-4eR"/>
                         <outlet property="learnAboutLabel" destination="20u-4l-cs4" id="7Xr-zL-AHn"/>
                         <outlet property="loadingIndicator" destination="qfj-Sw-Ug3" id="QC2-X1-b7D"/>
                         <outlet property="measureTreeButton" destination="byh-k3-Tjp" id="QyG-ol-UpS"/>
                         <outlet property="noEventView" destination="min-eQ-ydn" id="duA-9y-RDA"/>
                         <outlet property="noEventsImage" destination="f1y-vH-FHQ" id="FrS-Ma-Mkq"/>
                         <outlet property="noEventsLabel" destination="f1y-vH-FHQ" id="mjv-dp-s0f"/>
+                        <outlet property="volunteerButton" destination="TDM-vU-KOP" id="HQg-oa-cWf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FOX-dI-u4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
