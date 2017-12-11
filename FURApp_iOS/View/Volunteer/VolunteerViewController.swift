@@ -66,9 +66,7 @@ class VolunteerViewController: UIViewController {
         self.presenter.leaderAccessEvent()
     }
     
-    // MARK: - Presenter response
-    // MARK: TODO: Icono de voluntariado sale mal en iphone X
-    
+    // MARK: - Presenter response    
     func requestLocationPermission() {
         let alert = UIAlertController(title: "Activa tu localización", message: "Para poder ser líder de equipo necesitamos saber que te encuentras en el evento. Dirígete a Ajustes -> FURApp y activa la localización, o sólo ve el tutorial.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Entiendo", style: UIAlertActionStyle.default, handler: nil))
