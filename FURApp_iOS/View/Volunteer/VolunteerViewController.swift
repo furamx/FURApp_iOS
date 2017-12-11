@@ -43,11 +43,6 @@ class VolunteerViewController: UIViewController {
             self.displayNoData()
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func displayNoData() {
         self.loadingIndicator.stopAnimating()
@@ -56,9 +51,12 @@ class VolunteerViewController: UIViewController {
     }
     
     func display(data: Event) {
-        self.loadingIndicator.stopAnimating()
-        self.eventView.isHidden = false
+        loadingIndicator.stopAnimating()
+        eventView.isHidden = false
+        
         leaderButton.layer.cornerRadius = 30.0
+        volunteerButton.layer.cornerRadius = 30.0
+        
         eventNameLabel.text = data.name
     }
     
@@ -69,8 +67,9 @@ class VolunteerViewController: UIViewController {
     }
     
     // MARK: - Presenter response
+    // MARK: TODO: Icono de voluntariado sale mal en iphone X
     
-    func requestForLocation() {
+    func requestLocationPermission() {
         let alert = UIAlertController(title: "Activa tu localización", message: "Para poder ser líder de equipo necesitamos saber que te encuentras en el evento. Dirígete a Ajustes -> FURApp y activa la localización, o sólo ve el tutorial.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Entiendo", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)

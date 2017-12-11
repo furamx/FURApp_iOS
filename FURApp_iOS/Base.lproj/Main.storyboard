@@ -115,7 +115,7 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="min-eQ-ydn">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sin conexión a internet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93r-2g-BHh">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sin conexión a internet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93r-2g-BHh">
                                         <rect key="frame" x="0.0" y="20" width="375" height="19.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -171,7 +171,7 @@
                                     <constraint firstItem="20u-4l-cs4" firstAttribute="centerY" secondItem="min-eQ-ydn" secondAttribute="centerY" id="y7t-f9-e6e"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uv6-BQ-wQD">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uv6-BQ-wQD">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nuestro evento" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q70-8p-JiR">
@@ -253,12 +253,6 @@
                             <constraint firstItem="min-eQ-ydn" firstAttribute="trailing" secondItem="ndB-Hv-K9J" secondAttribute="trailing" id="ren-hB-YbH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ndB-Hv-K9J"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="min-eQ-ydn"/>
-                                <exclude reference="qfj-Sw-Ug3"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Voluntariado" image="VolunteerTabIcon" id="Xcp-hm-PDW"/>
                     <connections>

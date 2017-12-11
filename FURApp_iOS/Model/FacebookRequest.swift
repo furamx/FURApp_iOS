@@ -21,8 +21,11 @@ class FacebookRequest {
         // FURA
         // pageId = "681255215248937"
         
-        // Página con evento activo hoy
+        // Página con evento activo hoy cheemestry
         pageId = "111061232291851"
+        
+        // Página con evento otro día
+        // pageId = "809934922490700"
     }
     
     func getPageEvents(completitionHandler: @escaping ([[String:AnyObject]]) -> ()) {

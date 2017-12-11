@@ -51,10 +51,18 @@ class VolunteerPresenter: NSObject, CLLocationManagerDelegate {
     
     func show(data: Event?){
         if (data == nil){
-            view.displayNoData()
+            self.view.displayNoData()
         }else {
-            self.event = data
-            view.display(data: event)
+            let today = Date()
+            let calendar = Calendar.current
+            
+            let difference = calendar.dateComponents([.day], from: today, to: data!.start_time!)
+            if (difference.day == 0) {
+                self.event = data
+                self.view.display(data: event)
+            }else {
+                self.view.displayNoData()
+            }
         }
     }
     
@@ -72,7 +80,7 @@ class VolunteerPresenter: NSObject, CLLocationManagerDelegate {
                         locationManager.startUpdatingLocation()
                         break
                     case .denied:
-                        view.requestForLocation()
+                        view.requestLocationPermission()
                         break
                     case .notDetermined:
                         locationManager.requestWhenInUseAuthorization()
@@ -81,7 +89,7 @@ class VolunteerPresenter: NSObject, CLLocationManagerDelegate {
                         break
                 }
             }else {
-                view.requestForLocation()
+                view.requestLocationPermission()
             }
         }else {
             self.view.requestRegistration()
