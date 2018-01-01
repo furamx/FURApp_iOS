@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VolunteerViewController: UIViewController {
+class VolunteerViewController: UIViewController, VolunteerView {
     
     // MARK: - Properties
     private var presenter: VolunteerPresenter!
@@ -33,24 +33,18 @@ class VolunteerViewController: UIViewController {
     // MARK: - ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter = VolunteerPresenter()
+        self.presenter = VolunteerPresenter(withService: VolunteerService())
         self.presenter.attach(view: self)
-        
-        if (ConnectionHelper.isConnectedToNetwork()){
-            self.presenter.loadData()
-        }else {
-            internetConnectionLabel.isHidden = false
-            self.displayNoData()
-        }
+        self.presenter.load()
     }
     
-    func displayNoData() {
-        self.loadingIndicator.stopAnimating()
-        self.measureTreeButton.layer.cornerRadius = 30.0
-        self.noEventView.isHidden = false
+    // MARK: - IBActions
+    @IBAction func leaderButtonClick(_ sender: Any) {
+        self.presenter.leaderAccessEvent()
     }
     
-    func display(data: Event) {
+    // MARK: - VolunteerViewContract
+    func display(data: VolunteerEventViewData) {
         loadingIndicator.stopAnimating()
         eventView.isHidden = false
         
@@ -60,22 +54,26 @@ class VolunteerViewController: UIViewController {
         eventNameLabel.text = data.name
     }
     
-    // MARK: - IBActions
-    
-    @IBAction func leaderButtonClick(_ sender: Any) {
-        self.presenter.leaderAccessEvent()
+    func displayNoData() {
+        self.loadingIndicator.stopAnimating()
+        self.measureTreeButton.layer.cornerRadius = 30.0
+        self.noEventView.isHidden = false
     }
     
-    // MARK: - Presenter response    
+    func displayNoNetwork() {
+        self.internetConnectionLabel.isHidden = false
+        displayNoData()
+    }
+    
     func requestLocationPermission() {
-        let alert = UIAlertController(title: "Activa tu localización", message: "Para poder ser líder de equipo necesitamos saber que te encuentras en el evento. Dirígete a Ajustes -> FURApp y activa la localización, o sólo ve el tutorial.", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Entiendo", style: UIAlertActionStyle.default, handler: nil))
+        let alert = UIAlertController(title: "Activa tu localización", message: "Para poder ser líder de equipo necesitamos saber que te encuentras en el evento. Dirígete a Ajustes -> FURApp y activa la localización. Aún puedes participar como voluntario.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     func requestRegistration() {
         let alert = UIAlertController(title: "¡Regístrate!", message: "Para poder ser líder de equipo necesitas estar registrado. Navega a la sección de eventos y da click al botón para unirte.", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Entiendo", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     

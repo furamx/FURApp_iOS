@@ -51,30 +51,4 @@ class FacebookRequest {
             }
         }
     }
-    
-    func getEventOfToday(since: String, until: String, completitionHandler: @escaping ([[String:AnyObject]]) -> ()){
-        let params = ["fields" : "id, cover, description, start_time, end_time, is_canceled, is_draft, name, place",
-                      "since": since,
-                      "until": until,
-                      "limit": "1"]
-        let graphRequest = GraphRequest.init(graphPath: "\(pageId!)/events", parameters: params, accessToken: AccessToken.init(authenticationToken: accessToken), httpMethod: .GET, apiVersion: .defaultVersion)
-        graphRequest.start {
-            (urlResponse, requestResult) in
-            
-            switch requestResult {
-            case .failed(let error):
-                print("error in graph request:", error)
-                break
-            case .success(let graphResponse):
-                // the graphResponse can't convert the value as string. Everytime it fails.
-                // That would be the best so the data can be parsed via the Codable Protocol
-                if let responseDictionary = graphResponse.dictionaryValue {
-                    if let data = responseDictionary["data"] as? [[String:AnyObject]]{
-                        completitionHandler(data)
-                    }
-                }
-                break
-            }
-        }
-    }
 }

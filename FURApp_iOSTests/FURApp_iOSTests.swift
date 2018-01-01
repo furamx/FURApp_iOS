@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import FURApp_iOS
 
 class FURApp_iOSTests: XCTestCase {
     

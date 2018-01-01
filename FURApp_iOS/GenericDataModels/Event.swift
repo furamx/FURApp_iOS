@@ -19,7 +19,7 @@ struct Event {
     let is_draft: Bool?
     let name: String?
     let place: Place?
-    
+        
     // To be honest. I don't know if this is the best way of doing things, but I could
     // not make it work with the Codable protocol. Apparently the Graph API can't convert its
     // response to string. For more information go to model/FacebookRequest.swift
