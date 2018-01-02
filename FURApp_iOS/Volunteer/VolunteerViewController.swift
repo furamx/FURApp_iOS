@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VolunteerViewController: UIViewController, VolunteerView {
+class VolunteerViewController: UIViewController, VolunteerViewProtocol {
     
     // MARK: - Properties
     private var presenter: VolunteerPresenter!
@@ -77,7 +77,7 @@ class VolunteerViewController: UIViewController, VolunteerView {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func accessLeaderPermitted() {
+    func accessLeaderGranted() {
         let alert = UIAlertController(title: "Bienvenido Líder", message: "", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Gracias", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)

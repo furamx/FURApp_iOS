@@ -33,7 +33,7 @@ class EventsViewController: UIViewController, FUIAuthDelegate {
         eventsPresenter.attachView(view: self)
         eventsPresenter.setupAuth()
         
-        if (ConnectionHelper.isConnectedToNetwork()) {
+        if (NetworkHelper.isConnectedToNetwork()) {
             eventsPresenter.loadData()
             loadingActivityIndicator.startAnimating()
         }else {

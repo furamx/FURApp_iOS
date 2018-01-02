@@ -13,7 +13,7 @@ import FirebaseAuth
 class VolunteerPresenter: NSObject, CLLocationManagerDelegate {
     
     //MARK: - Properties
-    private var view: VolunteerView!
+    private var view: VolunteerViewProtocol!
     private let service: VolunteerService
     private var event: Event!
     private var auth: Auth
@@ -26,7 +26,7 @@ class VolunteerPresenter: NSObject, CLLocationManagerDelegate {
         auth = Auth.auth()
     }
     
-    func attach(view: VolunteerView){
+    func attach(view: VolunteerViewProtocol){
         self.view = view
     }
     
@@ -38,7 +38,7 @@ class VolunteerPresenter: NSObject, CLLocationManagerDelegate {
     // It is plus 2 days because the Graph Api has a bug which sometimes it doesn't get
     // the correct event, even though the dates are correct and an event exists.
     func load(){
-        guard ConnectionHelper.isConnectedToNetwork() else {
+        guard NetworkHelper.isConnectedToNetwork() else {
             self.view.displayNoNetwork()
             return
         }
@@ -100,13 +100,13 @@ class VolunteerPresenter: NSObject, CLLocationManagerDelegate {
             
             switch (CLLocationManager.authorizationStatus()) {
                 case .authorizedWhenInUse:
-                    locationManager.startUpdatingLocation()
+                    self.locationManager.startUpdatingLocation()
                     break
                 case .denied:
-                    view.requestLocationPermission()
+                    self.view.requestLocationPermission()
                     break
                 case .notDetermined:
-                    locationManager.requestWhenInUseAuthorization()
+                    self.locationManager.requestWhenInUseAuthorization()
                     break
                 default:
                     break
@@ -131,14 +131,14 @@ class VolunteerPresenter: NSObject, CLLocationManagerDelegate {
     }
     
     func leaderAccessGranted() {
-        self.view.accessLeaderPermitted()
+        self.view.accessLeaderGranted()
     }
     
     func leaderAccessDenied() {
         self.view.accessLeaderDenied()
     }
     
-    // MARK: - Location Manager delegate
+    // MARK: - Location Manager Delegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let userLocation = locations.last else {
             return

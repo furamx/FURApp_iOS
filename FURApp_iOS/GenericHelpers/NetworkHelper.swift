@@ -9,7 +9,7 @@
 import Foundation
 import SystemConfiguration
 
-public class ConnectionHelper {
+public class NetworkHelper {
     
     // See if internet conection exists
     class func isConnectedToNetwork() -> Bool {

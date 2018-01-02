@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol VolunteerView {
+protocol VolunteerViewProtocol {
     
     // MARK: - Display data
     func display(data: VolunteerEventViewData)
@@ -22,6 +22,6 @@ protocol VolunteerView {
     func requestLocationPermission()
     
     // MARK: Leader access resolution
-    func accessLeaderPermitted()
+    func accessLeaderGranted()
     func accessLeaderDenied()
 }

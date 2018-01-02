@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2307C7916BD58B4F0E69EDA2 /* Pods_FURApp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E5E6099F859DB84F31A68B /* Pods_FURApp_iOS.framework */; };
 		801F38C99DE65194D181B5DF /* Pods_FURApp_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F951A46CDCDDD99A4C1B1A8 /* Pods_FURApp_iOSUITests.framework */; };
-		870535311FF6DE4200CF98E0 /* VolunteerViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870535301FF6DE4200CF98E0 /* VolunteerViewContract.swift */; };
+		870535311FF6DE4200CF98E0 /* VolunteerViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870535301FF6DE4200CF98E0 /* VolunteerViewProtocol.swift */; };
 		871469981FC48952000E7D89 /* FacebookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871469971FC48952000E7D89 /* FacebookRequest.swift */; };
 		8714699A1FC493DF000E7D89 /* FirebaseGenericService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871469991FC493DF000E7D89 /* FirebaseGenericService.swift */; };
 		871492EE1FD8500A00700185 /* VolunteerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871492ED1FD8500A00700185 /* VolunteerPresenter.swift */; };
@@ -19,7 +19,7 @@
 		877D2C631FC5DBA9000C8273 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D2C621FC5DBA9000C8273 /* DataManager.swift */; };
 		877D2C651FC5F564000C8273 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D2C641FC5F564000C8273 /* DataParser.swift */; };
 		87889E041FB4D5EE0049561E /* FirebaseAuthUI.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87889E031FB4D5ED0049561E /* FirebaseAuthUI.strings */; };
-		879553651FD0859F00F8B17D /* ConnectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879553641FD0859F00F8B17D /* ConnectionHelper.swift */; };
+		879553651FD0859F00F8B17D /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879553641FD0859F00F8B17D /* NetworkHelper.swift */; };
 		8798FC9E1FBD06D1008000AE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798FC9D1FBD06D1008000AE /* GradientView.swift */; };
 		8798FCA01FBD0725008000AE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798FC9F1FBD0725008000AE /* BaseView.swift */; };
 		8798FCA21FBD074D008000AE /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798FCA11FBD074D008000AE /* UIView+Constraints.swift */; };
@@ -75,7 +75,7 @@
 		600A9160C65BCB0F9930F53C /* Pods-FURApp_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FURApp_iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FURApp_iOSTests/Pods-FURApp_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		7427CDAC80A4B690BAD78091 /* Pods_FURApp_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FURApp_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F951A46CDCDDD99A4C1B1A8 /* Pods_FURApp_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FURApp_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		870535301FF6DE4200CF98E0 /* VolunteerViewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerViewContract.swift; sourceTree = "<group>"; };
+		870535301FF6DE4200CF98E0 /* VolunteerViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerViewProtocol.swift; sourceTree = "<group>"; };
 		871469971FC48952000E7D89 /* FacebookRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookRequest.swift; sourceTree = "<group>"; };
 		871469991FC493DF000E7D89 /* FirebaseGenericService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseGenericService.swift; sourceTree = "<group>"; };
 		871492ED1FD8500A00700185 /* VolunteerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerPresenter.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		877D2C621FC5DBA9000C8273 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		877D2C641FC5F564000C8273 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		87889E031FB4D5ED0049561E /* FirebaseAuthUI.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = FirebaseAuthUI.strings; sourceTree = "<group>"; };
-		879553641FD0859F00F8B17D /* ConnectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionHelper.swift; sourceTree = "<group>"; };
+		879553641FD0859F00F8B17D /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		8798FC9D1FBD06D1008000AE /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		8798FC9F1FBD0725008000AE /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		8798FCA11FBD074D008000AE /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		873F0D801FD5AFF800514BDD /* Volunteer */ = {
 			isa = PBXGroup;
 			children = (
-				870535301FF6DE4200CF98E0 /* VolunteerViewContract.swift */,
+				870535301FF6DE4200CF98E0 /* VolunteerViewProtocol.swift */,
 				87ACBE1F1FF9C81E00B05A5D /* VolunteerEventViewData.swift */,
 				873F0D811FD5B01D00514BDD /* VolunteerViewController.swift */,
 				871492ED1FD8500A00700185 /* VolunteerPresenter.swift */,
@@ -345,7 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				87488F7E1FC8E22900162E0D /* EventsHelper.swift */,
-				879553641FD0859F00F8B17D /* ConnectionHelper.swift */,
+				879553641FD0859F00F8B17D /* NetworkHelper.swift */,
 			);
 			path = GenericHelpers;
 			sourceTree = "<group>";
@@ -699,7 +699,7 @@
 				87ACBE201FF9C81E00B05A5D /* VolunteerEventViewData.swift in Sources */,
 				871469981FC48952000E7D89 /* FacebookRequest.swift in Sources */,
 				874CDBA11FC737D100BD344E /* Event.swift in Sources */,
-				870535311FF6DE4200CF98E0 /* VolunteerViewContract.swift in Sources */,
+				870535311FF6DE4200CF98E0 /* VolunteerViewProtocol.swift in Sources */,
 				877D2C651FC5F564000C8273 /* DataParser.swift in Sources */,
 				87488F7F1FC8E22900162E0D /* EventsHelper.swift in Sources */,
 				8798FC9E1FBD06D1008000AE /* GradientView.swift in Sources */,
@@ -711,7 +711,7 @@
 				87F31BC91FCB569C002579AA /* EventDetailPresenter.swift in Sources */,
 				8798FCA41FBD0772008000AE /* Reusable.swift in Sources */,
 				87A3288D1FBCDF1B007E1567 /* EventDetailViewController.swift in Sources */,
-				879553651FD0859F00F8B17D /* ConnectionHelper.swift in Sources */,
+				879553651FD0859F00F8B17D /* NetworkHelper.swift in Sources */,
 				87C907B61FBF46C500CC49B3 /* EventsSectionHeader.swift in Sources */,
 				87FF21EE1FBCB18E009C13BC /* EventsViewController.swift in Sources */,
 				87D0DB291FC357B300E50123 /* EventsPresenter.swift in Sources */,
