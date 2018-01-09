@@ -9,13 +9,13 @@
 import UIKit
 import FirebaseAuthUI
 
-class EventsViewController: UIViewController, FUIAuthDelegate {
+class EventsViewController: UIViewController, FUIAuthDelegate, EventsViewProtocol {
     
     // MARK: - Properties
     var eventsPresenter: EventsPresenter!
     var statusBarShouldBeHidden = false
-    var eventsData: [Event]?
-    var eventSelected: Event?
+    var eventsData: [EventsViewData]?
+    var eventSelected: EventsViewData?
     
     // MARK: - IBOutlets
     @IBOutlet weak var signUpButton: UIButton!
@@ -29,18 +29,10 @@ class EventsViewController: UIViewController, FUIAuthDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        eventsPresenter = EventsPresenter()
-        eventsPresenter.attachView(view: self)
-        eventsPresenter.setupAuth()
-        
-        if (NetworkHelper.isConnectedToNetwork()) {
-            eventsPresenter.loadData()
-            loadingActivityIndicator.startAnimating()
-        }else {
-            warningInternetImageView.isHidden = false
-            loadingActivityIndicator.stopAnimating()
-            loadingLabel.text = "No tienes una conexión a internet"
-        }
+        eventsPresenter = EventsPresenter(withService: EventsService())
+        eventsPresenter.attach(view: self)
+        eventsPresenter.load()
+        loadingActivityIndicator.startAnimating()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,14 +47,6 @@ class EventsViewController: UIViewController, FUIAuthDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return statusBarShouldBeHidden
-    }
-    
-    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return .slide
     }
     
     // MARK: - IBActions
@@ -114,23 +98,50 @@ class EventsViewController: UIViewController, FUIAuthDelegate {
         updateUI()
     }
     
-    func show(data: [Event]?) {
+    func showSignIn(controller: Any){
+        present(controller as! UIViewController, animated: true, completion: nil)
+    }
+    
+    func display(data: [EventsViewData]?) {
+        eventsData = data
         configure(collectionView: eventCollectionView, data: data)
         loadingActivityIndicator.stopAnimating()
         loadingLabel.isHidden = true
         updateUI()
     }
     
+    func displayNoNetwork() {
+        warningInternetImageView.isHidden = false
+        loadingActivityIndicator.stopAnimating()
+        loadingLabel.text = "No tienes una conexión a internet"
+    }
+    
+    func showGoodbyeMessage() {
+        let alert = UIAlertController(title: "¡Adiós!", message: "Esperamos verte pronto", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: - UI logic
     func updateUI(){
         self.view.layoutIfNeeded()
         self.eventCollectionView.reloadSections(IndexSet(0 ..< 1))
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return statusBarShouldBeHidden
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
     }
     
     // MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "presentEvent") {
             let eventDetailPresenter = EventDetailPresenter()
-            eventDetailPresenter.load(data: eventSelected)
+            eventDetailPresenter.load(data: eventsPresenter.getSelectedEvent())
+            
             let eventDetailController = segue.destination as! EventDetailViewController
             eventDetailController.presenter = eventDetailPresenter
         }

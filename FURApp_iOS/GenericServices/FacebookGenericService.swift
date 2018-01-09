@@ -14,8 +14,8 @@ protocol FacebookProtocol {
 
 class FacebookGenericService: FacebookProtocol {
     // FURA
-    // let pageId = "111061232291851"
+    let pageId = "111061232291851"
     
     // Today's event
-    let pageId = "1317912141619847"
+    // let pageId = "1317912141619847"
 }

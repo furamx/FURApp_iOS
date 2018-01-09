@@ -12,13 +12,12 @@ import Kingfisher
 extension EventsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Configuration
-    internal func configure(collectionView: UICollectionView, data: [Event]?){
+    internal func configure(collectionView: UICollectionView, data: [EventsViewData]?){
         collectionView.register(UINib(nibName: "EventCell", bundle: nil), forCellWithReuseIdentifier: "EventCell")
         collectionView.registerSupplementaryView(EventsSectionHeader.self, kind: UICollectionElementKindSectionHeader)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
-        eventsData = data
     }
     
     // MARK: - UICollectionViewDataSource
@@ -33,17 +32,14 @@ extension EventsViewController: UICollectionViewDataSource, UICollectionViewDele
     // Fill data of each cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = EventCell.dequeue(fromCollectionView: collectionView, atIndexPath:indexPath)
+        
         let event = eventsData?[indexPath.row]
         cell.nameLabel.text = event?.name
+        cell.timeLabel.text = event?.name
+        cell.dateLabel.text = event?.date
+        cell.cityLabel.text = event?.city
         
-        if let date = event?.start_time {
-            let eventsHelper = EventsHelper()
-            cell.timeLabel.text = eventsHelper.getTime(fromDate: date)
-            cell.dateLabel.text = eventsHelper.getDate(fromDate: date)
-            cell.cityLabel.text = "\(event?.place?.location?.city ?? "Ciudad"), \(event?.place?.location?.country ?? "País")"
-        }
-        
-        if let imgString = event?.cover?.source! {
+        if let imgString = event?.cover_url {
             let imageUrl = URL(string: imgString)
             cell.imageView.kf.setImage(with: imageUrl)
         }
@@ -87,7 +83,7 @@ extension EventsViewController: UICollectionViewDataSource, UICollectionViewDele
             UIView.animate(withDuration: 0.6) {
                 self.setNeedsStatusBarAppearanceUpdate()
             }
-            self.eventSelected = eventsData?[indexPath.row]
+            eventsPresenter.setSelected(eventIndex: indexPath.row)
             performSegue(withIdentifier: "presentEvent", sender: self)
         }
     }
