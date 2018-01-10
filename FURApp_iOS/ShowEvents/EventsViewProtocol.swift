@@ -13,7 +13,7 @@ protocol EventsViewProtocol {
     func displayNoNetwork()
     
     func showSignUpButton()
-    func showSignIn(controller: Any)
+    func showSignInView()
     func hideSignUpButton()
     func showGoodbyeMessage()
 }

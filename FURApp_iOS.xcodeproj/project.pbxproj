@@ -27,6 +27,9 @@
 		8798FCA61FBD07A0008000AE /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798FCA51FBD07A0008000AE /* UICollectionView+Reusable.swift */; };
 		87A3288D1FBCDF1B007E1567 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A3288C1FBCDF1B007E1567 /* EventDetailViewController.swift */; };
 		87ACBE201FF9C81E00B05A5D /* VolunteerEventViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACBE1F1FF9C81E00B05A5D /* VolunteerEventViewData.swift */; };
+		87B57F2B20067C5D00262EDE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B57F2A20067C5D00262EDE /* SignInViewController.swift */; };
+		87B57F2D20067DC500262EDE /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B57F2C20067DC500262EDE /* SignInPresenter.swift */; };
+		87B57F2F20067E0200262EDE /* SignInProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B57F2E20067E0200262EDE /* SignInProtocol.swift */; };
 		87C236EC1FF59741001B5C04 /* VolunteerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C236EB1FF59741001B5C04 /* VolunteerService.swift */; };
 		87C236EF1FF5A63B001B5C04 /* FacebookGenericService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C236EE1FF5A63B001B5C04 /* FacebookGenericService.swift */; };
 		87C907B61FBF46C500CC49B3 /* EventsSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C907B41FBF46C500CC49B3 /* EventsSectionHeader.swift */; };
@@ -93,6 +96,9 @@
 		8798FCA51FBD07A0008000AE /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
 		87A3288C1FBCDF1B007E1567 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		87ACBE1F1FF9C81E00B05A5D /* VolunteerEventViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerEventViewData.swift; sourceTree = "<group>"; };
+		87B57F2A20067C5D00262EDE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		87B57F2C20067DC500262EDE /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
+		87B57F2E20067E0200262EDE /* SignInProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInProtocol.swift; sourceTree = "<group>"; };
 		87C236EB1FF59741001B5C04 /* VolunteerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerService.swift; sourceTree = "<group>"; };
 		87C236EE1FF5A63B001B5C04 /* FacebookGenericService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookGenericService.swift; sourceTree = "<group>"; };
 		87C907B41FBF46C500CC49B3 /* EventsSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsSectionHeader.swift; sourceTree = "<group>"; };
@@ -251,6 +257,16 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		87B57F29200676C600262EDE /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				87B57F2E20067E0200262EDE /* SignInProtocol.swift */,
+				87B57F2A20067C5D00262EDE /* SignInViewController.swift */,
+				87B57F2C20067DC500262EDE /* SignInPresenter.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		87C236ED1FF5A618001B5C04 /* GenericServices */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +332,7 @@
 				87C236ED1FF5A618001B5C04 /* GenericServices */,
 				87F2E0B81FB21F42001CFA93 /* GenericHelpers */,
 				874615682003D3AE006F362A /* Main */,
+				87B57F29200676C600262EDE /* SignIn */,
 				874615692003D43F006F362A /* Events */,
 				8746156B2003D485006F362A /* EventDetail */,
 				873F0D801FD5AFF800514BDD /* Volunteer */,
@@ -692,6 +709,9 @@
 				87C236EC1FF59741001B5C04 /* VolunteerService.swift in Sources */,
 				87ACBE201FF9C81E00B05A5D /* VolunteerEventViewData.swift in Sources */,
 				874CDBA11FC737D100BD344E /* Event.swift in Sources */,
+				87B57F2D20067DC500262EDE /* SignInPresenter.swift in Sources */,
+				87B57F2F20067E0200262EDE /* SignInProtocol.swift in Sources */,
+				87B57F2B20067C5D00262EDE /* SignInViewController.swift in Sources */,
 				870535311FF6DE4200CF98E0 /* VolunteerViewProtocol.swift in Sources */,
 				87488F7F1FC8E22900162E0D /* EventsHelper.swift in Sources */,
 				8798FC9E1FBD06D1008000AE /* GradientView.swift in Sources */,

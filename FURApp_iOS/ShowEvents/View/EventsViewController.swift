@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import FirebaseAuthUI
 
-class EventsViewController: UIViewController, FUIAuthDelegate, EventsViewProtocol {
+class EventsViewController: UIViewController, EventsViewProtocol {
     
     // MARK: - Properties
     var eventsPresenter: EventsPresenter!
@@ -58,23 +57,6 @@ class EventsViewController: UIViewController, FUIAuthDelegate, EventsViewProtoco
         eventsPresenter.logOut()
     }
     
-    // MARK: - Firebase Authentication
-    func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
-        guard let authError = error else { return }
-        
-        let errorCode = UInt((authError as NSError).code)
-        
-        switch errorCode {
-        case FUIAuthErrorCode.userCancelledSignIn.rawValue:
-            print("User cancelled sign-in");
-            break
-            
-        default:
-            let detailedError = (authError as NSError).userInfo[NSUnderlyingErrorKey] ?? authError
-            print("Login error: \((detailedError as! NSError).localizedDescription)");
-        }
-    }
-    
     // MARK: - UI Response Of Presenter
     func hideSignUpButton(){
         self.signUpButton.isEnabled = false
@@ -98,8 +80,8 @@ class EventsViewController: UIViewController, FUIAuthDelegate, EventsViewProtoco
         updateUI()
     }
     
-    func showSignIn(controller: Any){
-        present(controller as! UIViewController, animated: true, completion: nil)
+    func showSignInView(){
+        performSegue(withIdentifier: "presentSignIn", sender: self)
     }
     
     func display(data: [EventsViewData]?) {
@@ -138,12 +120,21 @@ class EventsViewController: UIViewController, FUIAuthDelegate, EventsViewProtoco
     
     // MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "presentEvent") {
+        switch segue.identifier {
+        case "presentEvent"?:
             let eventDetailPresenter = EventDetailPresenter()
             eventDetailPresenter.load(data: eventsPresenter.getSelectedEvent())
             
             let eventDetailController = segue.destination as! EventDetailViewController
             eventDetailController.presenter = eventDetailPresenter
+            break
+        case "presentSignIn"?:
+            let signInPresenter = SignInPresenter()
+            let signInView = segue.destination as! SignInViewController
+            signInView.presenter = signInPresenter
+            break
+        default:
+            break
         }
     }
 }

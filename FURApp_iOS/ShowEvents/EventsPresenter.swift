@@ -8,8 +8,6 @@
 
 import Foundation
 import Firebase
-import FirebaseAuthUI
-import FirebaseFacebookAuthUI
 
 class EventsPresenter {
     
@@ -19,7 +17,6 @@ class EventsPresenter {
     private var events: [Event]?
     private var selectedEvent: Event?
     fileprivate(set) var auth: Auth?
-    fileprivate(set) var authUI: FUIAuth?
     fileprivate(set) var authStateListenerHandle: AuthStateDidChangeListenerHandle?
     
     // MARK: - Initializers
@@ -48,9 +45,6 @@ class EventsPresenter {
     // Firebase UI is used to register a new user. This handles the creation of a controller,
     // buttons, and everything else.
     func setupAuth(){
-        self.authUI = FUIAuth.defaultAuthUI()
-        self.authUI?.delegate = view as? FUIAuthDelegate
-        self.authUI?.providers = [FUIFacebookAuth()]
         self.auth = Auth.auth()
         // If a user exists, hide the big signUp button
         self.auth?.addStateDidChangeListener { (auth, user) in
@@ -84,10 +78,7 @@ class EventsPresenter {
     
     // MARK: - Actions
     func openLogin(){
-        // TODO: - Hacer un fork en el repositorio de firebase para cambiar NSBundle.mainBundle a Bundle.main
-        authUI?.customStringsBundle = Bundle.main
-        
-        view?.showSignIn(controller: authUI?.authViewController() as Any)
+        view?.showSignInView()
     }
     
     public func logOut() {

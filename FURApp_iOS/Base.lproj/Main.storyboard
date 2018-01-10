@@ -10,6 +10,47 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Sign In View Controller-->
+        <scene sceneID="Df0-Wi-R06">
+            <objects>
+                <viewController id="vVU-OC-6uG" customClass="SignInViewController" customModule="FURApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X1g-Ad-lat">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHd-ez-WjH">
+                                <rect key="frame" x="0.0" y="351.5" width="375" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Ingresa con tu correo electrónico"/>
+                                <connections>
+                                    <action selector="showEmailSignIn:" destination="vVU-OC-6uG" eventType="touchUpInside" id="Mkw-9h-KcL"/>
+                                </connections>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uC6-d7-Xyf">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Cancelar" id="3Sd-uF-GbY">
+                                        <connections>
+                                            <action selector="cancelSignIn:" destination="vVU-OC-6uG" id="bNX-GC-QfH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IHd-ez-WjH" firstAttribute="centerY" secondItem="X1g-Ad-lat" secondAttribute="centerY" constant="35" id="GdE-mX-IbU"/>
+                            <constraint firstItem="IHd-ez-WjH" firstAttribute="leading" secondItem="zZL-cd-eBp" secondAttribute="leading" id="Zj1-u8-5Pb"/>
+                            <constraint firstItem="zZL-cd-eBp" firstAttribute="trailing" secondItem="IHd-ez-WjH" secondAttribute="trailing" id="uXD-wd-qsZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zZL-cd-eBp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gte-lH-85I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1438" y="-1722"/>
+        </scene>
         <!--Eventos-->
         <scene sceneID="tp6-K1-aF4">
             <objects>
@@ -51,6 +92,7 @@
                                         </state>
                                         <connections>
                                             <action selector="openLoginButton:" destination="hnG-3K-gG8" eventType="touchUpInside" id="pbQ-B6-AhP"/>
+                                            <segue destination="vVU-OC-6uG" kind="show" identifier="presentSignIn" id="CQ2-cJ-lZ9"/>
                                         </connections>
                                     </button>
                                 </subviews>
