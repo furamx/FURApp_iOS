@@ -37,11 +37,24 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aga-Sg-yDM">
+                                <rect key="frame" x="0.0" y="296.5" width="375" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Ingresa con Facebook"/>
+                                <connections>
+                                    <action selector="showFacebookSignIn:" destination="vVU-OC-6uG" eventType="touchUpInside" id="7Nn-t3-uUM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IHd-ez-WjH" firstAttribute="centerY" secondItem="X1g-Ad-lat" secondAttribute="centerY" constant="35" id="GdE-mX-IbU"/>
+                            <constraint firstItem="Aga-Sg-yDM" firstAttribute="centerX" secondItem="X1g-Ad-lat" secondAttribute="centerX" id="KVl-iZ-iA2"/>
+                            <constraint firstItem="Aga-Sg-yDM" firstAttribute="leading" secondItem="zZL-cd-eBp" secondAttribute="leading" id="ND9-V7-QX0"/>
                             <constraint firstItem="IHd-ez-WjH" firstAttribute="leading" secondItem="zZL-cd-eBp" secondAttribute="leading" id="Zj1-u8-5Pb"/>
+                            <constraint firstItem="Aga-Sg-yDM" firstAttribute="centerY" secondItem="X1g-Ad-lat" secondAttribute="centerY" constant="-20" id="jNt-pS-hIu"/>
+                            <constraint firstItem="IHd-ez-WjH" firstAttribute="centerX" secondItem="X1g-Ad-lat" secondAttribute="centerX" id="kTZ-t8-EBg"/>
+                            <constraint firstItem="zZL-cd-eBp" firstAttribute="trailing" secondItem="Aga-Sg-yDM" secondAttribute="trailing" id="sC3-jQ-GtV"/>
                             <constraint firstItem="zZL-cd-eBp" firstAttribute="trailing" secondItem="IHd-ez-WjH" secondAttribute="trailing" id="uXD-wd-qsZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zZL-cd-eBp"/>

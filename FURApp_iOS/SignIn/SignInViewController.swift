@@ -8,11 +8,14 @@
 
 import UIKit
 import FirebaseAuthUI
+import FacebookCore
+import FacebookLogin
 
 class SignInViewController: UIViewController, SignInProtocol, FUIAuthDelegate {
 
     // MARK: - Properties
     var presenter: SignInPresenter!
+    
     
     // MARK: - ViewController
     override func viewDidLoad() {
@@ -24,22 +27,31 @@ class SignInViewController: UIViewController, SignInProtocol, FUIAuthDelegate {
     
     // MARK: - IBActions
     @IBAction func cancelSignIn(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        hideController()
     }
 
     @IBAction func showEmailSignIn(_ sender: Any) {
         self.presenter.showEmailSignIn()
     }
     
+    @IBAction func showFacebookSignIn(_ sender: Any) {
+        presenter.facebookButtonClicked()
+    }
+    
+    
     // MARK: - Presenter Responses
     func showEmailSignIn(controller: Any) {
         present(controller as! UIViewController, animated: true, completion: nil)
     }
     
+    func hideController() {
+        dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: - Firebase Authentication
     func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
         guard let authError = error else {
-            dismiss(animated: true, completion: nil)
+            hideController()
             return
         }
         
