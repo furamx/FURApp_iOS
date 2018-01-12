@@ -55,14 +55,19 @@ class SignInPresenter {
         switch result {
         case .success(grantedPermissions: _, declinedPermissions: let declinedPermissions, token: let token):
             guard !declinedPermissions.contains(Permission(name: "rsvp_event")) else {
+                self.view?.errorSignIn(withMessage: "Necesitamos tu permiso en facebook para marcar como 'Asistiré' a tus eventos")
             break
             }
             
             let credential = FacebookAuthProvider.credential(withAccessToken: token.authenticationToken)
             Auth.auth().signIn(with: credential) { (user, error) in
-                self.view?.hideController()
+                self.view?.successfulSignIn()
             }
             break
+        case .failed(_):
+            self.view?.errorSignIn(withMessage: "Si tú lo cancelaste, ignora este mensaje. De otra manera, por favor inténtalo de nuevo.")
+            break
+            
         default:
             break
         }

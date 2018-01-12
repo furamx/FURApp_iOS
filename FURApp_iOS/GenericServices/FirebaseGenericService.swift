@@ -31,6 +31,6 @@ class FirebaseGenericService: FirebaseProtocol {
 //        dbRef.child("tokens").child("fb-app-token").observe(DataEventType.value, with: { (snapshot) in
 //            callback((snapshot.value as! String))
 //        })
-        callback("EAACEdEose0cBANlF9TIgkSAHO2EGuYYcDLM5rpZAHJSwl8fCZBDFLC91qjQsgqEB37TcnnKafDbSU0W9XK7Vvps9u1d0Haa8WRZAkoal4EaBZC0OKe5Xq3YwM94nWtkT0GFdzW8X6bSUcgZA3sMaRzjUl7Uuy02ep95Jb8hXK5MDH3ZCDwdFscpkctgmVmbCIZD")
+        callback("EAACEdEose0cBAFaoxYwrqhk78dGnojZC7d7mwesLmXfKyTwpQe0TnV5eQVue54kOGI8IT68Y0NZAN6zCYZBQTzOtMTMZBBYThZC6ZCNcmb0B2kllD08GJyVCaN9Ly1gcFOdwu4sib1wns48XAdMDdLzsWm9mxALS5ItQXubXzq0Cl1VfsTrfIaZC1ZB2jJFouZAEZD")
     }
 }

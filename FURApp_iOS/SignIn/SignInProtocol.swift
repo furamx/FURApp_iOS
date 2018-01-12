@@ -12,5 +12,7 @@ protocol SignInProtocol {
     
     // MARK: - Presenter Responses
     func showEmailSignIn(controller: Any)
-    func hideController()
+    func successfulSignIn()
+    func errorSignIn(withMessage: String)
+    
 }

@@ -44,11 +44,23 @@ class SignInViewController: UIViewController, SignInProtocol, FUIAuthDelegate {
         present(controller as! UIViewController, animated: true, completion: nil)
     }
     
+    func successfulSignIn() {
+        hideController()
+    }
+    
+    func errorSignIn(withMessage message: String) {
+        let alert = UIAlertController(title: "Algo salió mal", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        present(alert, animated: true, completion: nil)
+        hideController()
+    }
+    
+    // MARK: - Helpers
     func hideController() {
         dismiss(animated: true, completion: nil)
     }
     
-    // MARK: - Firebase Authentication
+    // MARK: - Firebase Delegate
     func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
         guard let authError = error else {
             hideController()
