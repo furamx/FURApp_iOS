@@ -18,30 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2N-SD-6e5">
-                                <rect key="frame" x="0.0" y="543" width="375" height="60"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHd-ez-WjH">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                        <state key="normal" title="Ingresa con tu correo electrónico">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="showEmailSignIn:" destination="vVU-OC-6uG" eventType="touchUpInside" id="Mkw-9h-KcL"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.18039215689999999" green="0.72156862749999995" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="IHd-ez-WjH" firstAttribute="centerX" secondItem="C2N-SD-6e5" secondAttribute="centerX" id="2sL-nr-bw4"/>
-                                    <constraint firstItem="IHd-ez-WjH" firstAttribute="centerY" secondItem="C2N-SD-6e5" secondAttribute="centerY" id="4EM-Is-NOC"/>
-                                    <constraint firstAttribute="height" constant="60" id="BpY-Mv-rqM"/>
-                                    <constraint firstItem="IHd-ez-WjH" firstAttribute="top" secondItem="C2N-SD-6e5" secondAttribute="top" id="HFA-qg-Aeq"/>
-                                    <constraint firstAttribute="trailing" secondItem="IHd-ez-WjH" secondAttribute="trailing" id="bmV-gP-8cJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="IHd-ez-WjH" secondAttribute="bottom" id="dr2-K8-ZEe"/>
-                                </constraints>
-                            </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uC6-d7-Xyf">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
@@ -79,13 +55,62 @@
                                     <constraint firstItem="Aga-Sg-yDM" firstAttribute="centerY" secondItem="F0f-pm-F18" secondAttribute="centerY" id="z8q-ds-Bue"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2N-SD-6e5">
+                                <rect key="frame" x="0.0" y="543" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHd-ez-WjH">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="Ingresa con tu correo electrónico">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showEmailSignIn:" destination="vVU-OC-6uG" eventType="touchUpInside" id="Mkw-9h-KcL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.72156862749999995" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="IHd-ez-WjH" firstAttribute="centerX" secondItem="C2N-SD-6e5" secondAttribute="centerX" id="2sL-nr-bw4"/>
+                                    <constraint firstItem="IHd-ez-WjH" firstAttribute="centerY" secondItem="C2N-SD-6e5" secondAttribute="centerY" id="4EM-Is-NOC"/>
+                                    <constraint firstAttribute="height" constant="60" id="BpY-Mv-rqM"/>
+                                    <constraint firstItem="IHd-ez-WjH" firstAttribute="top" secondItem="C2N-SD-6e5" secondAttribute="top" id="HFA-qg-Aeq"/>
+                                    <constraint firstAttribute="trailing" secondItem="IHd-ez-WjH" secondAttribute="trailing" id="bmV-gP-8cJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="IHd-ez-WjH" secondAttribute="bottom" id="dr2-K8-ZEe"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXd-ws-KCV">
+                                <rect key="frame" x="125" y="428" width="125" height="50"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cYf-Kd-MBw">
+                                        <rect key="frame" x="-5" y="25" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registrando" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHz-aQ-Dva">
+                                        <rect key="frame" x="19" y="25.5" width="87.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="9PI-al-CAe"/>
+                                    <constraint firstItem="uHz-aQ-Dva" firstAttribute="centerX" secondItem="YXd-ws-KCV" secondAttribute="centerX" id="GgP-TB-ku9"/>
+                                    <constraint firstItem="uHz-aQ-Dva" firstAttribute="centerY" secondItem="cYf-Kd-MBw" secondAttribute="centerY" id="Hi4-b5-D7T"/>
+                                    <constraint firstAttribute="height" constant="50" id="Xy4-g2-yKY"/>
+                                    <constraint firstAttribute="bottom" secondItem="cYf-Kd-MBw" secondAttribute="bottom" constant="5" id="sC7-Kq-CdU"/>
+                                    <constraint firstItem="cYf-Kd-MBw" firstAttribute="leading" secondItem="YXd-ws-KCV" secondAttribute="leading" constant="-5" id="x1I-9U-v1z"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zZL-cd-eBp" firstAttribute="trailing" secondItem="F0f-pm-F18" secondAttribute="trailing" id="8Xy-Py-gvA"/>
+                            <constraint firstItem="YXd-ws-KCV" firstAttribute="centerX" secondItem="X1g-Ad-lat" secondAttribute="centerX" id="E6k-Ed-og6"/>
                             <constraint firstItem="C2N-SD-6e5" firstAttribute="top" secondItem="F0f-pm-F18" secondAttribute="bottom" id="KSK-P3-XWY"/>
                             <constraint firstItem="uC6-d7-Xyf" firstAttribute="trailing" secondItem="zZL-cd-eBp" secondAttribute="trailing" id="N5I-ct-Id6"/>
                             <constraint firstItem="uC6-d7-Xyf" firstAttribute="bottom" secondItem="zZL-cd-eBp" secondAttribute="bottom" id="P1u-Jy-caK"/>
+                            <constraint firstItem="F0f-pm-F18" firstAttribute="top" secondItem="YXd-ws-KCV" secondAttribute="bottom" constant="5" id="PVW-ik-d0x"/>
                             <constraint firstItem="uC6-d7-Xyf" firstAttribute="top" secondItem="C2N-SD-6e5" secondAttribute="bottom" constant="20" id="Wki-iP-EIo"/>
                             <constraint firstItem="C2N-SD-6e5" firstAttribute="centerX" secondItem="X1g-Ad-lat" secondAttribute="centerX" id="bXh-nb-zKD"/>
                             <constraint firstItem="uC6-d7-Xyf" firstAttribute="leading" secondItem="zZL-cd-eBp" secondAttribute="leading" id="fo7-Yy-cn4"/>
@@ -95,6 +120,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zZL-cd-eBp"/>
                     </view>
+                    <connections>
+                        <outlet property="emailLoginButton" destination="IHd-ez-WjH" id="RMh-dx-DAg"/>
+                        <outlet property="facebookLoginButton" destination="Aga-Sg-yDM" id="PMG-d1-hnc"/>
+                        <outlet property="loadingView" destination="YXd-ws-KCV" id="8wE-bL-0EA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gte-lH-85I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,6 +11,8 @@ import Foundation
 protocol SignInProtocol {
     
     // MARK: - Presenter Responses
+    func startLoading()
+    func stopLoading()
     func showEmailSignIn(controller: Any)
     func successfulSignIn()
     func errorSignIn(withMessage: String)

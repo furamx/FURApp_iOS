@@ -16,6 +16,10 @@ class SignInViewController: UIViewController, SignInProtocol, FUIAuthDelegate {
     // MARK: - Properties
     var presenter: SignInPresenter!
     
+    // MARK: - IBOutlets
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var facebookLoginButton: UIButton!
+    @IBOutlet weak var emailLoginButton: UIButton!
     
     // MARK: - ViewController
     override func viewDidLoad() {
@@ -40,6 +44,17 @@ class SignInViewController: UIViewController, SignInProtocol, FUIAuthDelegate {
     
     
     // MARK: - Presenter Responses
+    func startLoading() {
+        facebookLoginButton.isEnabled = false
+        emailLoginButton.isEnabled = false
+        loadingView.isHidden = false
+    }
+    
+    func stopLoading() {
+        facebookLoginButton.isEnabled = true
+        emailLoginButton.isEnabled = true
+        loadingView.isHidden = true
+    }
     func showEmailSignIn(controller: Any) {
         present(controller as! UIViewController, animated: true, completion: nil)
     }
@@ -52,7 +67,6 @@ class SignInViewController: UIViewController, SignInProtocol, FUIAuthDelegate {
         let alert = UIAlertController(title: "Algo salió mal", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         present(alert, animated: true, completion: nil)
-        hideController()
     }
     
     // MARK: - Helpers
@@ -61,6 +75,7 @@ class SignInViewController: UIViewController, SignInProtocol, FUIAuthDelegate {
     }
     
     // MARK: - Firebase Delegate
+    // The presenter can't be the delegate because it depends on a UIViewController to show the interface
     func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
         guard let authError = error else {
             hideController()
@@ -71,6 +86,7 @@ class SignInViewController: UIViewController, SignInProtocol, FUIAuthDelegate {
         
         switch errorCode {
         case FUIAuthErrorCode.userCancelledSignIn.rawValue:
+            stopLoading()
             print("User cancelled sign-in");
             break
             

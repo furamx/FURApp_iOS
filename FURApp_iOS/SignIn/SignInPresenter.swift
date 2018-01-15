@@ -40,11 +40,13 @@ class SignInPresenter {
     
     // MARK: - View actions
     func showEmailSignIn() {
+        self.view?.startLoading()
         authUI?.customStringsBundle = Bundle.main
         self.view?.showEmailSignIn(controller: authUI?.authViewController() as Any)
     }
     
     @objc func facebookButtonClicked() {
+        self.view?.startLoading()
         let loginManager = LoginManager()
         loginManager.logIn(publishPermissions: [.rsvpEvent], viewController: view as? UIViewController, completion: self.facebookLogin(result:))
     }
@@ -55,6 +57,7 @@ class SignInPresenter {
         switch result {
         case .success(grantedPermissions: _, declinedPermissions: let declinedPermissions, token: let token):
             guard !declinedPermissions.contains(Permission(name: "rsvp_event")) else {
+                self.view?.stopLoading()
                 self.view?.errorSignIn(withMessage: "Necesitamos tu permiso en facebook para marcar como 'Asistiré' a tus eventos")
             break
             }
@@ -65,10 +68,11 @@ class SignInPresenter {
             }
             break
         case .failed(_):
-            self.view?.errorSignIn(withMessage: "Si tú lo cancelaste, ignora este mensaje. De otra manera, por favor inténtalo de nuevo.")
+            self.view?.stopLoading()
+            self.view?.errorSignIn(withMessage: "Ocurrió un error, por favor inténtalo de nuevo.")
             break
-            
-        default:
+        case .cancelled:
+            self.view?.stopLoading()
             break
         }
     }
