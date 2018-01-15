@@ -18,17 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHd-ez-WjH">
-                                <rect key="frame" x="0.0" y="351.5" width="375" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Ingresa con tu correo electrónico"/>
-                                <connections>
-                                    <action selector="showEmailSignIn:" destination="vVU-OC-6uG" eventType="touchUpInside" id="Mkw-9h-KcL"/>
-                                </connections>
-                            </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uC6-d7-Xyf">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2N-SD-6e5">
+                                <rect key="frame" x="0.0" y="543" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHd-ez-WjH">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="Ingresa con tu correo electrónico">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showEmailSignIn:" destination="vVU-OC-6uG" eventType="touchUpInside" id="Mkw-9h-KcL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.72156862749999995" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="IHd-ez-WjH" firstAttribute="centerX" secondItem="C2N-SD-6e5" secondAttribute="centerX" id="2sL-nr-bw4"/>
+                                    <constraint firstItem="IHd-ez-WjH" firstAttribute="centerY" secondItem="C2N-SD-6e5" secondAttribute="centerY" id="4EM-Is-NOC"/>
+                                    <constraint firstAttribute="height" constant="60" id="BpY-Mv-rqM"/>
+                                    <constraint firstItem="IHd-ez-WjH" firstAttribute="top" secondItem="C2N-SD-6e5" secondAttribute="top" id="HFA-qg-Aeq"/>
+                                    <constraint firstAttribute="trailing" secondItem="IHd-ez-WjH" secondAttribute="trailing" id="bmV-gP-8cJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="IHd-ez-WjH" secondAttribute="bottom" id="dr2-K8-ZEe"/>
+                                </constraints>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uC6-d7-Xyf">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="g5d-u4-u3v"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Cancelar" id="3Sd-uF-GbY">
                                         <connections>
@@ -37,32 +55,50 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aga-Sg-yDM">
-                                <rect key="frame" x="0.0" y="296.5" width="375" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Ingresa con Facebook"/>
-                                <connections>
-                                    <action selector="showFacebookSignIn:" destination="vVU-OC-6uG" eventType="touchUpInside" id="7Nn-t3-uUM"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0f-pm-F18">
+                                <rect key="frame" x="0.0" y="483" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aga-Sg-yDM">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="Ingresa con Facebook">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showFacebookSignIn:" destination="vVU-OC-6uG" eventType="touchUpInside" id="7Nn-t3-uUM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Aga-Sg-yDM" firstAttribute="leading" secondItem="F0f-pm-F18" secondAttribute="leading" id="Nkm-4r-YbB"/>
+                                    <constraint firstAttribute="height" constant="60" id="Sl8-1c-E8m"/>
+                                    <constraint firstItem="Aga-Sg-yDM" firstAttribute="centerX" secondItem="F0f-pm-F18" secondAttribute="centerX" id="VoL-2i-KTi"/>
+                                    <constraint firstAttribute="bottom" secondItem="Aga-Sg-yDM" secondAttribute="bottom" id="gLg-JB-DjW"/>
+                                    <constraint firstItem="Aga-Sg-yDM" firstAttribute="top" secondItem="F0f-pm-F18" secondAttribute="top" id="xoC-2S-6HX"/>
+                                    <constraint firstItem="Aga-Sg-yDM" firstAttribute="centerY" secondItem="F0f-pm-F18" secondAttribute="centerY" id="z8q-ds-Bue"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IHd-ez-WjH" firstAttribute="centerY" secondItem="X1g-Ad-lat" secondAttribute="centerY" constant="35" id="GdE-mX-IbU"/>
-                            <constraint firstItem="Aga-Sg-yDM" firstAttribute="centerX" secondItem="X1g-Ad-lat" secondAttribute="centerX" id="KVl-iZ-iA2"/>
-                            <constraint firstItem="Aga-Sg-yDM" firstAttribute="leading" secondItem="zZL-cd-eBp" secondAttribute="leading" id="ND9-V7-QX0"/>
-                            <constraint firstItem="IHd-ez-WjH" firstAttribute="leading" secondItem="zZL-cd-eBp" secondAttribute="leading" id="Zj1-u8-5Pb"/>
-                            <constraint firstItem="Aga-Sg-yDM" firstAttribute="centerY" secondItem="X1g-Ad-lat" secondAttribute="centerY" constant="-20" id="jNt-pS-hIu"/>
-                            <constraint firstItem="IHd-ez-WjH" firstAttribute="centerX" secondItem="X1g-Ad-lat" secondAttribute="centerX" id="kTZ-t8-EBg"/>
-                            <constraint firstItem="zZL-cd-eBp" firstAttribute="trailing" secondItem="Aga-Sg-yDM" secondAttribute="trailing" id="sC3-jQ-GtV"/>
-                            <constraint firstItem="zZL-cd-eBp" firstAttribute="trailing" secondItem="IHd-ez-WjH" secondAttribute="trailing" id="uXD-wd-qsZ"/>
+                            <constraint firstItem="zZL-cd-eBp" firstAttribute="trailing" secondItem="F0f-pm-F18" secondAttribute="trailing" id="8Xy-Py-gvA"/>
+                            <constraint firstItem="C2N-SD-6e5" firstAttribute="top" secondItem="F0f-pm-F18" secondAttribute="bottom" id="KSK-P3-XWY"/>
+                            <constraint firstItem="uC6-d7-Xyf" firstAttribute="trailing" secondItem="zZL-cd-eBp" secondAttribute="trailing" id="N5I-ct-Id6"/>
+                            <constraint firstItem="uC6-d7-Xyf" firstAttribute="bottom" secondItem="zZL-cd-eBp" secondAttribute="bottom" id="P1u-Jy-caK"/>
+                            <constraint firstItem="uC6-d7-Xyf" firstAttribute="top" secondItem="C2N-SD-6e5" secondAttribute="bottom" constant="20" id="Wki-iP-EIo"/>
+                            <constraint firstItem="C2N-SD-6e5" firstAttribute="centerX" secondItem="X1g-Ad-lat" secondAttribute="centerX" id="bXh-nb-zKD"/>
+                            <constraint firstItem="uC6-d7-Xyf" firstAttribute="leading" secondItem="zZL-cd-eBp" secondAttribute="leading" id="fo7-Yy-cn4"/>
+                            <constraint firstItem="zZL-cd-eBp" firstAttribute="trailing" secondItem="C2N-SD-6e5" secondAttribute="trailing" id="mFR-wD-2Lw"/>
+                            <constraint firstItem="F0f-pm-F18" firstAttribute="leading" secondItem="zZL-cd-eBp" secondAttribute="leading" id="rCJ-ak-OhN"/>
+                            <constraint firstItem="C2N-SD-6e5" firstAttribute="leading" secondItem="zZL-cd-eBp" secondAttribute="leading" id="yIJ-rx-zVD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zZL-cd-eBp"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gte-lH-85I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438" y="-1722"/>
+            <point key="canvasLocation" x="1437.5999999999999" y="-1722.1889055472266"/>
         </scene>
         <!--Eventos-->
         <scene sceneID="tp6-K1-aF4">
